@@ -11,8 +11,8 @@ import CoreData
 import UIKit
 
 class CoreDataStore: NSObject {
-    let storeName = "CoreDataForArtists"
-    let storeFilename = "CoreDataForArtists.sqlite"
+    let storeName = "CUSoon"
+    let storeFilename = "CUSoon.sqlite"
     
     lazy var applicationDocumentsDirectory: URL = {
         
