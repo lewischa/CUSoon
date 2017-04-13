@@ -15,6 +15,10 @@
 		0CB6EEEB1E9EECD500FFCDBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB6EEE91E9EECD500FFCDBE /* LaunchScreen.storyboard */; };
 		0CB6EEF61E9EECD500FFCDBE /* CUSoonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEF51E9EECD500FFCDBE /* CUSoonTests.swift */; };
 		0CB6EF011E9EECD500FFCDBE /* CUSoonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF001E9EECD500FFCDBE /* CUSoonUITests.swift */; };
+		0CB6EF1C1E9F089700FFCDBE /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1B1E9F089700FFCDBE /* CoreDataStore.swift */; };
+		0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */; };
+		0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */; };
+		0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		0CB6EEFC1E9EECD500FFCDBE /* CUSoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CUSoonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EF001E9EECD500FFCDBE /* CUSoonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CUSoonUITests.swift; sourceTree = "<group>"; };
 		0CB6EF021E9EECD500FFCDBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CB6EF1B1E9F089700FFCDBE /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCommonMethods.swift; sourceTree = "<group>"; };
+		0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEntity.swift; sourceTree = "<group>"; };
+		0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		0CB6EEDC1E9EECD500FFCDBE /* CUSoon */ = {
 			isa = PBXGroup;
 			children = (
+				0CB6EF1A1E9F06A700FFCDBE /* Database */,
 				0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */,
 				0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */,
 				0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */,
@@ -126,6 +135,18 @@
 				0CB6EF021E9EECD500FFCDBE /* Info.plist */,
 			);
 			path = CUSoonUITests;
+			sourceTree = "<group>";
+		};
+		0CB6EF1A1E9F06A700FFCDBE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */,
+				0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */,
+				0CB6EF1B1E9F089700FFCDBE /* CoreDataStore.swift */,
+				0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */,
+			);
+			name = Database;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CB6EF1C1E9F089700FFCDBE /* CoreDataStore.swift in Sources */,
 				0CB6EEE61E9EECD500FFCDBE /* CUSoon.xcdatamodeld in Sources */,
+				0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */,
 				0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */,
+				0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */,
+				0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */,
 				0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,6 +534,7 @@
 				0CB6EF071E9EECD500FFCDBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CB6EF081E9EECD500FFCDBE /* Build configuration list for PBXNativeTarget "CUSoonTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +543,7 @@
 				0CB6EF0A1E9EECD500FFCDBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CB6EF0B1E9EECD500FFCDBE /* Build configuration list for PBXNativeTarget "CUSoonUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +552,7 @@
 				0CB6EF0D1E9EECD500FFCDBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
