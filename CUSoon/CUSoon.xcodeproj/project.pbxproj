@@ -24,6 +24,7 @@
 		423DAE6D1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */; };
 		423DAE6F1EA32EA900EF1A33 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */; };
 		423DAE711EA32EBD00EF1A33 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */; };
+		423DAE741EA3E84000EF1A33 /* Agency_FB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 423DAE731EA3E83F00EF1A33 /* Agency_FB.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewServiceTypeRangeViewController.swift; sourceTree = "<group>"; };
 		423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		423DAE731EA3E83F00EF1A33 /* Agency_FB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Agency_FB.ttf; path = ../../../../../../Volumes/Users/jjols/Desktop/GL3AM/app/src/main/assets/Agency_FB.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				0CB6EEE71E9EECD500FFCDBE /* Assets.xcassets */,
 				0CB6EEE91E9EECD500FFCDBE /* LaunchScreen.storyboard */,
 				0CB6EEEC1E9EECD500FFCDBE /* Info.plist */,
+				423DAE721EA3E80E00EF1A33 /* CustomFonts */,
 				0CB6EEE41E9EECD500FFCDBE /* CUSoon.xcdatamodeld */,
 				0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */,
 			);
@@ -162,6 +165,14 @@
 			);
 			name = Database;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		423DAE721EA3E80E00EF1A33 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				423DAE731EA3E83F00EF1A33 /* Agency_FB.ttf */,
+			);
+			name = CustomFonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				0CB6EEEB1E9EECD500FFCDBE /* LaunchScreen.storyboard in Resources */,
 				0CB6EEE81E9EECD500FFCDBE /* Assets.xcassets in Resources */,
 				0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */,
+				423DAE741EA3E84000EF1A33 /* Agency_FB.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

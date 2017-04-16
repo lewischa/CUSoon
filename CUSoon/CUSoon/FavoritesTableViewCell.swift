@@ -16,6 +16,8 @@ class FavoritesTableViewCell: UITableViewCell {
     @IBOutlet weak var contact: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //set text colors to green
         address.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
         contact.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
 
@@ -26,6 +28,9 @@ class FavoritesTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        //set text colors to green
+        address.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
+        contact.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
     }
 
 }

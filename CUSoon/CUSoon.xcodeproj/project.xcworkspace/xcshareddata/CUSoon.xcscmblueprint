@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C1D66EAEF62D99120671E9B16E84740FD5BE63E9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "AA8032A83C946DF357A6820805706072B1798554" : 9223372036854775807,
+    "C1D66EAEF62D99120671E9B16E84740FD5BE63E9" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5CB7230D-D5C8-4C1E-ADD1-703AFCC69470",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "AA8032A83C946DF357A6820805706072B1798554" : "..\/..\/..\/Volumes\/Users\/jjols\/Desktop\/GL3AM",
+    "C1D66EAEF62D99120671E9B16E84740FD5BE63E9" : "CUSoon\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CUSoon",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CUSoon\/CUSoon.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/SuperHumansInTech\/GL3AM",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AA8032A83C946DF357A6820805706072B1798554"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/lewischa\/CUSoon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C1D66EAEF62D99120671E9B16E84740FD5BE63E9"
+    }
+  ]
+}
