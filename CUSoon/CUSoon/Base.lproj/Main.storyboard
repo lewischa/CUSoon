@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -106,7 +106,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlO-26-2BW">
-                                <rect key="frame" x="186" y="613" width="42" height="20"/>
+                                <rect key="frame" x="193" y="613" width="28" height="20"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -147,44 +147,63 @@
         <scene sceneID="Zh9-NA-Xvx">
             <objects>
                 <tableViewController title="ServiceFavorites" id="ChS-Vv-EJd" customClass="FavoritesTableViewController" customModule="CUSoon" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="dQ2-Wi-nxo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="158" sectionHeaderHeight="28" sectionFooterHeight="28" id="dQ2-Wi-nxo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="serviceFavoriteCell" rowHeight="100" id="QFa-da-VJS" customClass="FavoritesTableViewCell" customModule="CUSoon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="serviceFavoriteCell" rowHeight="158" id="QFa-da-VJS" customClass="FavoritesTableViewCell" customModule="CUSoon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFa-da-VJS" id="LwP-IL-IpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-vf-sBL">
-                                            <rect key="frame" x="5" y="5" width="90" height="90"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-vf-sBL">
+                                            <rect key="frame" x="8" y="30.333333333333336" width="90" height="90.666666666666657"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="98O-uC-21k"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="DEi-65-jZE"/>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="bOs-s1-6vG"/>
+                                                <constraint firstAttribute="width" constant="90" id="d2D-yb-K5n"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k04-Ww-5gj">
-                                            <rect key="frame" x="100" y="5" width="308" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-8z-gJB">
+                                            <rect key="frame" x="115" y="94" width="291" height="20"/>
+                                            <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k04-Ww-5gj">
+                                            <rect key="frame" x="115" y="28.999999999999996" width="291" height="28.666666666666661"/>
                                             <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
                                             <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-1Z-9WW">
-                                            <rect key="frame" x="100" y="41" width="308" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-1Z-9WW">
+                                            <rect key="frame" x="115" y="65" width="291" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-8z-gJB">
-                                            <rect key="frame" x="98" y="70" width="308" height="21"/>
-                                            <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="top" secondItem="k04-Ww-5gj" secondAttribute="bottom" constant="8" id="8j5-lt-AfR"/>
-                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="top" secondItem="bfS-1Z-9WW" secondAttribute="bottom" constant="8" id="VJp-ux-K07"/>
-                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="leading" secondItem="MOB-vf-sBL" secondAttribute="trailing" constant="5" id="wKn-rD-mCj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5jz-8z-gJB" secondAttribute="bottom" constant="36" id="02S-J6-aMZ"/>
+                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="leading" secondItem="MOB-vf-sBL" secondAttribute="trailing" constant="17" id="0AG-vB-Vdx"/>
+                                        <constraint firstItem="k04-Ww-5gj" firstAttribute="leading" secondItem="MOB-vf-sBL" secondAttribute="trailing" constant="17" id="0Xt-6C-FtM"/>
+                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="leading" secondItem="MOB-vf-sBL" secondAttribute="trailing" constant="17" id="3hi-FA-bdX"/>
+                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="trailing" secondItem="LwP-IL-IpS" secondAttribute="trailingMargin" id="Ftw-8K-lz4"/>
+                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="width" secondItem="k04-Ww-5gj" secondAttribute="width" id="MnU-y6-qhQ"/>
+                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="height" secondItem="bfS-1Z-9WW" secondAttribute="height" id="PTe-ob-B49"/>
+                                        <constraint firstItem="k04-Ww-5gj" firstAttribute="trailing" secondItem="LwP-IL-IpS" secondAttribute="trailingMargin" id="VBN-qZ-e6g"/>
+                                        <constraint firstItem="MOB-vf-sBL" firstAttribute="top" secondItem="LwP-IL-IpS" secondAttribute="topMargin" constant="22" id="VOX-sA-PF9"/>
+                                        <constraint firstItem="k04-Ww-5gj" firstAttribute="top" secondItem="LwP-IL-IpS" secondAttribute="topMargin" constant="21" id="Zee-WC-G3w"/>
+                                        <constraint firstItem="MOB-vf-sBL" firstAttribute="leading" secondItem="LwP-IL-IpS" secondAttribute="leadingMargin" id="dV3-KO-Wf4"/>
+                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="trailing" secondItem="LwP-IL-IpS" secondAttribute="trailingMargin" id="lXc-ic-MZw"/>
+                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="top" secondItem="k04-Ww-5gj" secondAttribute="bottom" constant="8" id="nvz-Qi-Zx9"/>
+                                        <constraint firstItem="bfS-1Z-9WW" firstAttribute="width" secondItem="k04-Ww-5gj" secondAttribute="width" id="o8g-9g-Mpj"/>
+                                        <constraint firstItem="5jz-8z-gJB" firstAttribute="top" secondItem="bfS-1Z-9WW" secondAttribute="bottom" constant="8" id="ohZ-54-DM9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="MOB-vf-sBL" secondAttribute="bottom" constant="29" id="vbz-3I-PRc"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
