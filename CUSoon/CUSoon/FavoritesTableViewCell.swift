@@ -32,5 +32,28 @@ class FavoritesTableViewCell: UITableViewCell {
         address.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
         contact.textColor = UIColor(red: 109/255, green: 253/255, blue: 30/255, alpha: 1)
     }
+    
+    func useService(service: ServiceModel) {
+        if let title = service.title {
+            favoriteTitle.text = title
+        }
+        
+        switch (service.service_type) {
+        case 0:     // Alarm Only
+            serviceImage.image = #imageLiteral(resourceName: "alarm54")
+        case 1:     // Message Only
+            serviceImage.image = #imageLiteral(resourceName: "speehcbubble")
+        case 2:     // Alarm + Message
+            serviceImage.image = #imageLiteral(resourceName: "alarm_text_icon")
+        default:
+            serviceImage.image = #imageLiteral(resourceName: "alarm_text_icon")
+        }
+        
+        address.text = service.reverseGeocode()
+        
+        if let name = service.name {
+            contact.text = name
+        }
+    }
 
 }

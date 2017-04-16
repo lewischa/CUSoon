@@ -9,9 +9,16 @@
 import UIKit
 
 class FavoritesTableViewController: UITableViewController {
+    
+    let accessor = DatabaseAccessor()
+    var serviceFavorites = [ServiceModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Favorites"
+        
+        serviceFavorites = accessor.fetch()
         
         //Gray background
         view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
@@ -32,24 +39,25 @@ class FavoritesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return serviceFavorites.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "serviceFavoriteCell", for: indexPath)
 
-        // Configure the cell...
-
+        if let thisCell = cell as? FavoritesTableViewCell {
+            let serviceToUse = serviceFavorites[indexPath.row]
+            thisCell.useService(service: serviceToUse)
+        }
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

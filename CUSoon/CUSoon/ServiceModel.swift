@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreLocation
+import Contacts
 
 class ServiceModel: NSObject {
     
@@ -62,4 +63,48 @@ class ServiceModel: NSObject {
         print("phone: \(phone)")
         print("name: \(name)")
     }
+    
+    func reverseGeocode() -> String {
+        var address = ""
+        let location = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
+        
+        CLGeocoder().reverseGeocodeLocation(location, completionHandler: {
+            placemarks, error in
+            print(location)
+            
+            if let marks = placemarks {
+                if error == nil && marks.count > 0 {
+                    if let streetNumber = marks[0].subThoroughfare {
+                        address += streetNumber
+                        address += " "
+                    }
+                    if let street = marks[0].thoroughfare {
+                        address += street
+                    }
+                    address += ", "
+                    if let city = marks[0].locality {
+                        address += city
+                        address += " "
+                    }
+                    if let zip = marks[0].postalCode {
+                        address += zip
+                    }
+                }
+            }
+        })
+        return address
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
