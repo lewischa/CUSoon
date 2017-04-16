@@ -49,7 +49,10 @@ class FavoritesTableViewCell: UITableViewCell {
             serviceImage.image = #imageLiteral(resourceName: "alarm_text_icon")
         }
         
-        address.text = service.reverseGeocode()
+        service.reverseGeocode(completion: {
+            (addressToUse) -> Void in
+            self.address.text = addressToUse
+        })
         
         if let name = service.name {
             contact.text = name
