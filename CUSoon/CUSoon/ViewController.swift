@@ -124,7 +124,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func serviceFavoritesOnClick(_ sender: Any) {
+        print("serviceFavorites click")
+    }
+    @IBAction func serviceUpdatesOnClick(_ sender: Any) {
+        print("serviceUpdates click")
+    }
 
+    @IBAction func newServiceOnClick(_ sender: Any) {
+        print("newService click")
+    }
 
 }
 
