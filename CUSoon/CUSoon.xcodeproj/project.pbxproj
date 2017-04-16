@@ -223,6 +223,7 @@
 				TargetAttributes = {
 					0CB6EED91E9EECD400FFCDBE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = JHF6RYCS32;
 						ProvisioningStyle = Automatic;
 					};
 					0CB6EEF01E9EECD500FFCDBE = {
@@ -449,7 +450,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JHF6RYCS32;
 				INFOPLIST_FILE = CUSoon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,7 +464,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JHF6RYCS32;
 				INFOPLIST_FILE = CUSoon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
 				PRODUCT_NAME = "$(TARGET_NAME)";

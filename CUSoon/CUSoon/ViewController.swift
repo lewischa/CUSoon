@@ -14,6 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
         // Do any additional setup after loading the view, typically from a nib.
         
         // MARK: - Delete All
