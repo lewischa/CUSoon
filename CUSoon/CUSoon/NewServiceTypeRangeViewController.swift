@@ -10,6 +10,7 @@ import UIKit
 
 class NewServiceTypeRangeViewController: UIViewController {
     var range: Double = 10.0
+    
 
     @IBOutlet weak var services: UISegmentedControl!
     @IBOutlet weak var rangeLabel: UILabel!
