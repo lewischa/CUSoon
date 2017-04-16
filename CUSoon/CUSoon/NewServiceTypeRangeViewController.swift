@@ -11,6 +11,7 @@ import UIKit
 class NewServiceTypeRangeViewController: UIViewController {
     var range: Double = 10.0
 
+    @IBOutlet weak var services: UISegmentedControl!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     override func viewDidLoad() {
@@ -36,6 +37,20 @@ class NewServiceTypeRangeViewController: UIViewController {
         }
         rangeLabel.text = String(range) + " miles"
         print("range:\(range)")
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    //Allows user to shake device to reset values with shake gesture
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake{
+            range = 10.0
+            rangeLabel.text = String(range) + " miles"
+            slider.value = Float(range)
+            services.selectedSegmentIndex = 0
+        }
     }
     /*
     // MARK: - Navigation
