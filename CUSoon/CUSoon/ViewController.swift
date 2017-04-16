@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
         // MARK: - Delete All
 //        accessor.dropTable()
         
@@ -124,7 +124,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func serviceFavoritesOnClick(_ sender: Any) {
+        print("serviceFavorites click")
+    }
+    @IBAction func serviceUpdatesOnClick(_ sender: Any) {
+        print("serviceUpdates click")
+    }
 
+    @IBAction func newServiceOnClick(_ sender: Any) {
+        print("newService click")
+    }
 
 }
 
