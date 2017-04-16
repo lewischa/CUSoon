@@ -64,35 +64,39 @@ class ServiceModel: NSObject {
         print("name: \(name)")
     }
     
-    func reverseGeocode() -> String {
-        var address = ""
+    func reverseGeocode(completion: @escaping (_ address: String) -> Void) {
         let location = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
         
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {
             placemarks, error in
+            var addressToReturn = ""
             print(location)
             
             if let marks = placemarks {
                 if error == nil && marks.count > 0 {
                     if let streetNumber = marks[0].subThoroughfare {
-                        address += streetNumber
-                        address += " "
+                        print("streetNumber: \(streetNumber)")
+                        addressToReturn += streetNumber
+                        addressToReturn += " "
                     }
                     if let street = marks[0].thoroughfare {
-                        address += street
+                        print("street: \(street)")
+                        addressToReturn += street
                     }
-                    address += ", "
+                    addressToReturn += ", "
                     if let city = marks[0].locality {
-                        address += city
-                        address += " "
+                        print("city: \(city)")
+                        addressToReturn += city
+                        addressToReturn += " "
                     }
                     if let zip = marks[0].postalCode {
-                        address += zip
+                        print("zip: \(zip)")
+                        addressToReturn += zip
                     }
                 }
             }
+            completion(addressToReturn)
         })
-        return address
     }
 }
 
