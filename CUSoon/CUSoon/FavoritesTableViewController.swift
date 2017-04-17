@@ -20,8 +20,15 @@ class FavoritesTableViewController: UITableViewController {
         
         serviceFavorites = accessor.fetch()
         
+        configureColors()
+        
+//        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
+//        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
+//        navigationController?.navigationBar.barTintColor = backgroundColor
+        
         //Gray background
-        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+//        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -29,6 +36,16 @@ class FavoritesTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    
+    func configureColors() {
+        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
+        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
+        navigationController?.navigationBar.barTintColor = backgroundColor
+        view.backgroundColor = backgroundColor
     }
 
     override func didReceiveMemoryWarning() {

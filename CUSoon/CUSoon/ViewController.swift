@@ -11,11 +11,15 @@ import UIKit
 class ViewController: UIViewController {
     
     let accessor = DatabaseAccessor()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        view.backgroundColor = backgroundColor
+        navigationController?.navigationBar.barTintColor = backgroundColor
+        navigationController?.navigationBar.isTranslucent = false
         // MARK: - Delete All
 //        accessor.dropTable()
         
@@ -59,6 +63,8 @@ class ViewController: UIViewController {
         updateTest(old1: serv3, new1: serv4)
         deleteTest(toDelete: serv4)
     }
+    
+    
     
     // MARK: - Test Delete
     /*
@@ -118,6 +124,14 @@ class ViewController: UIViewController {
         for service in services {
             service.printService()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backButton = UIBarButtonItem()
+        backButton.title = "Home"
+        
+        backButton.tintColor = UIColor(red: 0/255, green: 255/255, blue: 204/255, alpha: 1)
+        navigationItem.backBarButtonItem = backButton
     }
     
     override func didReceiveMemoryWarning() {
