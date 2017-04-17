@@ -1,51 +1,23 @@
 //
-//  FavoritesTableViewController.swift
+//  LocationSearchTableViewController.swift
 //  CUSoon
 //
-//  Created by Jeremy Olsen on 4/15/17.
+//  Created by Jeremy Olsen on 4/16/17.
 //  Copyright © 2017 Capstone. All rights reserved.
 //
 
 import UIKit
 
-class FavoritesTableViewController: UITableViewController {
-    
-    let accessor = DatabaseAccessor()
-    var serviceFavorites = [ServiceModel]()
+class LocationSearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Favorites"
-        
-        serviceFavorites = accessor.fetch()
-        
-        configureColors()
-        
-//        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
-//        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
-//        navigationController?.navigationBar.barTintColor = backgroundColor
-        
-        //Gray background
-//        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    
-    func configureColors() {
-        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
-        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
-        navigationController?.navigationBar.barTintColor = backgroundColor
-        view.backgroundColor = backgroundColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,25 +28,24 @@ class FavoritesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        // #warning Incomplete implementation, return the number of sections
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return serviceFavorites.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "serviceFavoriteCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        if let thisCell = cell as? FavoritesTableViewCell {
-            let serviceToUse = serviceFavorites[indexPath.row]
-            thisCell.useService(service: serviceToUse)
-        }
-        
+        // Configure the cell...
+
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
