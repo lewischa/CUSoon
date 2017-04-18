@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     let accessor = DatabaseAccessor()
+    var statusAvailable = true
     
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,12 @@ class ViewController: UIViewController {
         let serv2 = ServiceModel(lat: 38.338003, long: -122.673809, _range: 5.0, sType: 1, _title: "Test2", msg: "msg2", _phone: "7072922477", _name: "SSU1")
         let serv3 = ServiceModel(lat: 37.787573, long: -122.437249, _range: 10.0, sType: 1, _title: "Test3", msg: "msg3", _phone: "7072922477", _name: "SF1")
         
+        /*
+           deactivate status button if no services are running
+         */
+        if statusAvailable == false {
+            deactivateStatusButton()
+        }
         
         /*
             Insert entities into database
@@ -64,6 +73,11 @@ class ViewController: UIViewController {
         deleteTest(toDelete: serv4)
     }
     
+    func deactivateStatusButton() {
+            statusButton.isEnabled = false
+            statusButton.tintColor = UIColor.gray
+            statusLabel.textColor = UIColor.gray
+    }
     
     
     // MARK: - Test Delete
@@ -143,6 +157,7 @@ class ViewController: UIViewController {
     }
     @IBAction func serviceUpdatesOnClick(_ sender: Any) {
         print("serviceUpdates click")
+        //temporarily change availability when clicked
     }
 
     @IBAction func newServiceOnClick(_ sender: Any) {
