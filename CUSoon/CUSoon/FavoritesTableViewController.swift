@@ -21,6 +21,7 @@ class FavoritesTableViewController: UITableViewController {
         serviceFavorites = accessor.fetch()
         
         configureColors()
+        addNewFavoriteButton()
         
 //        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
 //        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
@@ -47,10 +48,26 @@ class FavoritesTableViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = backgroundColor
         view.backgroundColor = backgroundColor
     }
+    
+    func addNewFavoriteButton() {
+        let addButton = UIButton(type: .custom)
+        addButton.setImage(#imageLiteral(resourceName: "alarm_text_icon_save"), for: .normal)
+        let navBarHeight: CGFloat = self.navigationController!.navigationBar.frame.height * 0.75
+        addButton.frame = CGRect(x: 0, y: 0, width: navBarHeight, height: navBarHeight)
+        addButton.addTarget(self, action: #selector(FavoritesTableViewController.addNewFavorite(_:)), for: .touchUpInside)
+        let addButtonNavItem = UIBarButtonItem(customView: addButton)
+        self.navigationItem.setRightBarButton(addButtonNavItem, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    @IBAction func addNewFavorite(_ sender: Any) {
+        print("Add new favorite button tapped")
+        self.performSegue(withIdentifier: "addFavoriteSegue", sender: sender)
     }
 
     // MARK: - Table view data source
