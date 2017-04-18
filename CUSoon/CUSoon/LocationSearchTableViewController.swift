@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
-class LocationSearchTableViewController: UITableViewController {
+class LocationSearchTableViewController: UITableViewController, UISearchResultsUpdating {
+    
+    var matchingItem: [MKMapItem] = []
+    var mapView: MKMapView? = nil
+    var handleMapSearchDelegate: HandleMapSearch? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +34,71 @@ class LocationSearchTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        print("matchingItem.count: \(matchingItem.count)")
+        return matchingItem.count
     }
+    
+    
 
-    /*
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        print("In update table view")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        let selectedItem = matchingItem[indexPath.row].placemark
+        cell.textLabel?.text = selectedItem.name
+        cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
+        
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedItem = matchingItem[indexPath.row].placemark
+        handleMapSearchDelegate?.dropPinZoomIn(placemark: selectedItem)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let mapView = mapView, let searchBarText = searchController.searchBar.text else{return}
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = searchBarText
+        request.region = mapView.region
+        let search = MKLocalSearch(request: request)
+        search.start {response, _ in
+            guard let response = response else{
+                return
+            }
+            self.matchingItem = response.mapItems
+            print(self.matchingItem.count)
+            print(self.matchingItem[0])
+            self.tableView.reloadData()
+        }
+    }
+    
+    func parseAddress(selectedItem: MKPlacemark) -> String{
+        //Put a space between address number and street
+        let firstSpace = (selectedItem.subThoroughfare != nil && selectedItem.thoroughfare != nil) ? " " : " "
+        
+        //Put a comma between street and city/state
+        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) && (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
+        let secondSpace = (selectedItem.subAdministrativeArea != nil && selectedItem.administrativeArea != nil) ? " " : " "
+        let addressLine = String(format: "%@%@%@%@%@%@%@",
+                                 selectedItem.subThoroughfare ?? "",
+                                 firstSpace,
+                                 selectedItem.thoroughfare ?? "",
+                                 comma,
+                                 selectedItem.locality ?? "",
+                                 secondSpace,
+                                 selectedItem.administrativeArea ?? "")
+        return addressLine
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -93,3 +146,46 @@ class LocationSearchTableViewController: UITableViewController {
     */
 
 }
+
+//extension LocationSearchTableViewController{
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return matchingItem.count
+//    }
+//    
+//    
+//    
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+//        let selectedItem = matchingItem[indexPath.row].placemark
+//        cell.textLabel?.text = selectedItem.name
+//        cell.detailTextLabel?.text = ""
+//        
+//        
+//        // Configure the cell...
+//        
+//        return cell
+//    }
+//}
+
+//extension LocationSearchTableViewController : UISearchResultsUpdating{
+//    func updateSearchResults(for searchController: UISearchController) {
+//        guard let mapView = mapView, let searchBarText = searchController.searchBar.text else{return}
+//        let request = MKLocalSearchRequest()
+//        request.naturalLanguageQuery = searchBarText
+//        request.region = mapView.region
+//        let search = MKLocalSearch(request: request)
+//        search.start {response, _ in
+//            guard let response = response else{
+//                return
+//            }
+//            self.matchingItem = response.mapItems
+//            print(self.matchingItem.count)
+//            print(self.matchingItem[0])
+//            self.tableView.reloadData()
+//        }
+//    }
+//}
+
+
