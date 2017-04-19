@@ -12,6 +12,7 @@ class FavoritesTableViewController: UITableViewController {
     
     let accessor = DatabaseAccessor()
     var serviceFavorites = [ServiceModel]()
+    let colors = Colors()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,8 @@ class FavoritesTableViewController: UITableViewController {
     
     
     func configureColors() {
-        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
-        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        let textColor = colors.titleOrage
+        let backgroundColor = colors.background
         
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
         navigationController?.navigationBar.barTintColor = backgroundColor
