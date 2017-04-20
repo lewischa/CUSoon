@@ -24,6 +24,7 @@
 		0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */; };
 		0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */; };
 		0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */; };
+		3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD30A331EA5925B00B452D9 /* StatusViewController.swift */; };
 		423DAE6D1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */; };
 		423DAE6F1EA32EA900EF1A33 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */; };
 		423DAE711EA32EBD00EF1A33 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */; };
@@ -74,6 +75,7 @@
 		0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCommonMethods.swift; sourceTree = "<group>"; };
 		0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEntity.swift; sourceTree = "<group>"; };
 		0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FD30A331EA5925B00B452D9 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewServiceTypeRangeViewController.swift; sourceTree = "<group>"; };
 		423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				423DAE721EA3E80E00EF1A33 /* CustomFonts */,
 				0CB6EEE41E9EECD500FFCDBE /* CUSoon.xcdatamodeld */,
 				0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */,
+				3FD30A331EA5925B00B452D9 /* StatusViewController.swift */,
 			);
 			path = CUSoon;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */,
 				423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */,
 				0CB6EF1C1E9F089700FFCDBE /* CoreDataStore.swift in Sources */,
 				423DAE711EA32EBD00EF1A33 /* FavoritesTableViewCell.swift in Sources */,
