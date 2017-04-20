@@ -37,13 +37,13 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if accessor.isServiceRunning() {
-            activateStatusButton()
-            deactivateNewAndFavoritesButtons()
-        } else {
-            deactivateStatusButton()
-            activateNewAndFavoritesButtons()
-        }
+//        if accessor.isServiceRunning() {
+//            activateStatusButton()
+//            deactivateNewAndFavoritesButtons()
+//        } else {
+//            deactivateStatusButton()
+//            activateNewAndFavoritesButtons()
+//        }
     }
     
     func activateNewAndFavoritesButtons() {
