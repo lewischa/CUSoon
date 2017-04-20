@@ -210,6 +210,101 @@ class DatabaseAccessor: NSObject {
             abort()
         }
     }
+    
+    func isServiceRunning() -> Bool {
+        var running = false
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ServiceRunning")
+        let predicate = NSPredicate(format: "id == %d", 0)
+        
+        fetchRequest.predicate = predicate
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try coreDataContext.managedObjectContext.fetch(fetchRequest)
+            let serviceRunning = result as! [ServiceRunning]
+            
+            if serviceRunning.count > 0 {
+                running = serviceRunning[0].isRunning
+            }
+        } catch {
+            print("Unable to retrieve ServiceRunning Entity from data store")
+            abort()
+        }
+        return running
+    }
+    
+    func toggleRunning() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ServiceRunning")
+        let predicate = NSPredicate(format: "id == %d", 0)
+        
+        fetchRequest.predicate = predicate
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try coreDataContext.managedObjectContext.fetch(fetchRequest)
+            let serviceRunning = result as! [ServiceRunning]
+            
+            if serviceRunning.count > 0 {
+                serviceRunning[0].isRunning = !serviceRunning[0].isRunning
+                coreDataContext.saveContext()
+            }
+        } catch {
+            print("Unable to retrieve ServiceRunning Entity to toggle from data store")
+            abort()
+        }
+    }
+    
+    func insertServiceRunning() {
+//        if !hasInsertedServiceRunning() {
+//            let toInsert = NSEntityDescription.insertNewObject(forEntityName: "ServiceRunning", into: coreDataContext.backgroundContext!) as! ServiceRunning
+//            
+//            toInsert.id = 0
+//            toInsert.isRunning = false
+//            
+//            coreDataContext.saveContext()
+//        } else {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ServiceRunning")
+            
+            fetchRequest.returnsObjectsAsFaults = false
+            
+            do {
+                let result = try coreDataContext.managedObjectContext.fetch(fetchRequest)
+                let serviceRunning = result as! [ServiceRunning]
+                
+                if serviceRunning.count > 0 {
+                    serviceRunning[0].isRunning = false
+                } else {
+                    let toInsert = NSEntityDescription.insertNewObject(forEntityName: "ServiceRunning", into: coreDataContext.backgroundContext!) as! ServiceRunning
+                    toInsert.id = 0
+                    toInsert.isRunning = false
+                }
+                coreDataContext.saveContext()
+            } catch {
+                print("Unable to retrieve ServiceRunning Entity to check insertion from data store")
+                abort()
+            }
+//        }
+    }
+    
+    func hasInsertedServiceRunning() -> Bool {
+        var hasInserted = false
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ServiceRunning")
+        
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try coreDataContext.managedObjectContext.fetch(fetchRequest)
+            let serviceRunning = result as! [ServiceRunning]
+            
+            if serviceRunning.count > 0 {
+                hasInserted = true
+            }
+        } catch {
+            print("Unable to retrieve ServiceRunning Entity to check insertion from data store")
+            abort()
+        }
+        return hasInserted
+    }
 }
 
 
