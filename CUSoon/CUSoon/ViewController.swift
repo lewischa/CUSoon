@@ -12,55 +12,105 @@ class ViewController: UIViewController {
     
     let accessor = DatabaseAccessor()
 
-
+    let colors = Colors()
+    @IBOutlet weak var newServiceButton: UIButton!
+    @IBOutlet weak var newServiceLabel: UILabel!
+    @IBOutlet weak var favoritesButton: UIButton!
+    @IBOutlet weak var favoritesLabel: UILabel!
+    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        let backgroundColor = colors.background
         view.backgroundColor = backgroundColor
         navigationController?.navigationBar.barTintColor = backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         // MARK: - Delete All
 //        accessor.dropTable()
         
+        initializeDatabase()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if accessor.isServiceRunning() {
+            activateStatusButton()
+            deactivateNewAndFavoritesButtons()
+        } else {
+            deactivateStatusButton()
+            activateNewAndFavoritesButtons()
+        }
+    }
+    
+    func activateNewAndFavoritesButtons() {
+        newServiceButton.isEnabled = true
+        newServiceButton.alpha = 1
+        newServiceLabel.textColor = colors.titleOrage
+        favoritesButton.isEnabled = true
+        favoritesButton.alpha = 1
+        favoritesLabel.textColor = colors.titleOrage
+        
+    }
+    
+    func deactivateNewAndFavoritesButtons() {
+        newServiceButton.isEnabled = false
+        newServiceButton.alpha = 0.5
+        newServiceLabel.textColor = UIColor.gray
+        favoritesButton.isEnabled = false
+        favoritesButton.alpha = 0.5
+        favoritesLabel.textColor = UIColor.gray
+    }
+    
+    func activateStatusButton() {
+        statusButton.isEnabled = true
+        statusButton.alpha = 1
+        statusLabel.textColor = colors.titleOrage
+    }
+    func deactivateStatusButton() {
+        statusButton.isEnabled = false
+        statusButton.alpha = 0.5
+        statusLabel.textColor = UIColor.gray
+    }
+    
+    func initializeDatabase() {
+        accessor.insertServiceRunning()
         
         /*
-            Set up initial database entries
-        */
+         Set up initial database entries
+         */
         let serv1 = ServiceModel(lat: 38.472681, long: -122.760275, _range: 5.0, sType: 0, _title: "Test1", msg: "msg1", _phone: "7072922477", _name: "Chad1")
         let serv2 = ServiceModel(lat: 38.338003, long: -122.673809, _range: 5.0, sType: 1, _title: "Test2", msg: "msg2", _phone: "7072922477", _name: "SSU1")
         let serv3 = ServiceModel(lat: 37.787573, long: -122.437249, _range: 10.0, sType: 1, _title: "Test3", msg: "msg3", _phone: "7072922477", _name: "SF1")
         
- 
 
-        
         /*
-            Insert entities into database
-        */
+         Insert entities into database
+         */
         accessor.save(service: serv1)
         accessor.save(service: serv2)
         accessor.save(service: serv3)
         
-        
         /*
-            Fetch all from database
-        */
+         Fetch all from database
+         */
+        
+        
         var services: [ServiceModel]
-        
         services = accessor.fetch()
-        
-        
         /*
-            Print all
-        */
+         Print all
+         */
         for service in services {
             service.printService()
         }
         
         /*
-            serv4 used for update and delete testing
-        */
+         serv4 used for update and delete testing
+         */
         let serv4 = ServiceModel(lat: 1.787573, long: -122.437249, _range: 10.0, sType: 1, _title: "Test3", msg: "msg3", _phone: "7777777777", _name: "SF100000000000")
         
         updateTest(old1: serv3, new1: serv4)

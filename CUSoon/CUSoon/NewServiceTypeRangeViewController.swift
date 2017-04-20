@@ -10,9 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
+protocol HandleMapSearch {
+    func dropPinZoomIn(placemark: MKPlacemark)
+}
+
+class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate{
     var range: Double = 10.0
     var lManager = CLLocationManager()
+    var selectedPin: MKPlacemark? = nil
     
 
    
@@ -57,6 +62,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         mapView.setRegion(region, animated: true)
         
         lManager.stopUpdatingLocation()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,9 +86,17 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     }
     
     @IBAction func showSearchBar(_ sender: Any) {
-        searchController = UISearchController(searchResultsController: nil)
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTableViewController
+        locationSearchTable.mapView = mapView
+        locationSearchTable.handleMapSearchDelegate = self
+        searchController = UISearchController(searchResultsController: locationSearchTable)
+        searchController.searchResultsUpdater = locationSearchTable
+        searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
+        //searchController.definesPresentationContext = true
         self.searchController.searchBar.delegate = self
+        
         
         present(searchController, animated: true, completion: nil)
     }
@@ -137,4 +151,21 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     }
     */
 
+}
+
+extension NewServiceTypeRangeViewController: HandleMapSearch{
+    func dropPinZoomIn(placemark: MKPlacemark) {
+        selectedPin = placemark
+        mapView.removeAnnotations(mapView.annotations)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = placemark.coordinate
+        annotation.title = placemark.title
+        if let city = placemark.locality, let state = placemark.administrativeArea{
+            annotation.subtitle = "\(city) \(state)"
+        }
+        mapView.addAnnotation(annotation)
+        let span = MKCoordinateSpanMake(0.03, 0.03)
+        let region = MKCoordinateRegionMake(placemark.coordinate, span)
+        mapView.setRegion(region, animated: true)
+    }
 }
