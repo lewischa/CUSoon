@@ -19,7 +19,7 @@
         <scene sceneID="DCr-vq-VQX">
             <objects>
                 <navigationController id="Mp2-Gc-2aX" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="6QB-kH-cLR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6QB-kH-cLR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
