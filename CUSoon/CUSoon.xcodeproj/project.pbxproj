@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0C0AC72C1E9F2AD400BEBD42 /* ServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */; };
 		0C0AC72E1E9F2F2300BEBD42 /* DatabaseAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AC72D1E9F2F2300BEBD42 /* DatabaseAccessor.swift */; };
+		0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */; };
+		0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */; };
+		0C2212101EA7293E00AAA473 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120F1EA7293E00AAA473 /* Colors.swift */; };
 		0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */; };
 		0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */; };
 		0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */; };
@@ -21,6 +24,7 @@
 		0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */; };
 		0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */; };
 		0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */; };
+		3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD30A331EA5925B00B452D9 /* StatusViewController.swift */; };
 		423DAE6D1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */; };
 		423DAE6F1EA32EA900EF1A33 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */; };
 		423DAE711EA32EBD00EF1A33 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */; };
@@ -50,6 +54,9 @@
 /* Begin PBXFileReference section */
 		0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceModel.swift; sourceTree = "<group>"; };
 		0C0AC72D1E9F2F2300BEBD42 /* DatabaseAccessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseAccessor.swift; sourceTree = "<group>"; };
+		0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRunning.swift; sourceTree = "<group>"; };
+		0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceRunning+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0C22120F1EA7293E00AAA473 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0CB6EEDA1E9EECD500FFCDBE /* CUSoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUSoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataCommonMethods.swift; sourceTree = "<group>"; };
 		0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceEntity.swift; sourceTree = "<group>"; };
 		0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3FD30A331EA5925B00B452D9 /* StatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewServiceTypeRangeViewController.swift; sourceTree = "<group>"; };
 		423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 				423DAE721EA3E80E00EF1A33 /* CustomFonts */,
 				0CB6EEE41E9EECD500FFCDBE /* CUSoon.xcdatamodeld */,
 				0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */,
+				3FD30A331EA5925B00B452D9 /* StatusViewController.swift */,
 			);
 			path = CUSoon;
 			sourceTree = "<group>";
@@ -169,6 +178,8 @@
 			children = (
 				0CB6EF1F1E9F0DF000FFCDBE /* ServiceEntity.swift */,
 				0CB6EF201E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift */,
+				0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */,
+				0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */,
 				0CB6EF1B1E9F089700FFCDBE /* CoreDataStore.swift */,
 				0CB6EF1D1E9F093900FFCDBE /* CoreDataCommonMethods.swift */,
 				0C0AC72D1E9F2F2300BEBD42 /* DatabaseAccessor.swift */,
@@ -181,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				423DAE751EA4171600EF1A33 /* Agency_FB.ttf */,
+				0C22120F1EA7293E00AAA473 /* Colors.swift */,
 			);
 			name = CustomFonts;
 			sourceTree = "<group>";
@@ -330,17 +342,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */,
 				423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */,
 				0CB6EF1C1E9F089700FFCDBE /* CoreDataStore.swift in Sources */,
 				423DAE711EA32EBD00EF1A33 /* FavoritesTableViewCell.swift in Sources */,
 				0C0AC72E1E9F2F2300BEBD42 /* DatabaseAccessor.swift in Sources */,
 				0CB6EEE61E9EECD500FFCDBE /* CUSoon.xcdatamodeld in Sources */,
+				0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */,
 				0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */,
 				0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */,
 				423DAE6F1EA32EA900EF1A33 /* FavoritesTableViewController.swift in Sources */,
+				0C2212101EA7293E00AAA473 /* Colors.swift in Sources */,
 				423DAE6D1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift in Sources */,
 				0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */,
 				0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */,
+				0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */,
 				0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */,
 				0C0AC72C1E9F2AD400BEBD42 /* ServiceModel.swift in Sources */,
 			);
