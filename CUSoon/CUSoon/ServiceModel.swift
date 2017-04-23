@@ -12,13 +12,13 @@ import Contacts
 
 class ServiceModel: NSObject {
     
-    let destination: CLLocationCoordinate2D
-    let range: Double
-    let service_type: Int16
-    let title: String?
-    let message: String?
-    let phone: String?
-    let name: String?
+    var destination: CLLocationCoordinate2D
+    var range: Double
+    var service_type: Int16
+    var title: String?
+    var message: String?
+    var phone: String?
+    var name: String?
     
     init(service: ServiceEntity) {
         destination = CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)

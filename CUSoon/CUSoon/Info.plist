@@ -49,5 +49,7 @@
 	<string>Result</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Result</string>
+	<key>NSContactsUsageDescription</key>
+	<string>For message services</string>
 </dict>
 </plist>
