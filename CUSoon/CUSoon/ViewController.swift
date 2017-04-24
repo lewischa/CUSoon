@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     
     let accessor = DatabaseAccessor()
-
+    let locator = CLLocationManager()
     let colors = Colors()
     @IBOutlet weak var newServiceButton: UIButton!
     @IBOutlet weak var newServiceLabel: UILabel!
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        locator.requestAlwaysAuthorization()
         // Do any additional setup after loading the view, typically from a nib.
         let backgroundColor = colors.background
         view.backgroundColor = backgroundColor
