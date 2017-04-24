@@ -365,34 +365,94 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Contact: " textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nQ-IN-2Zf">
-                                <rect key="frame" x="20" y="197" width="139" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact: " textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nQ-IN-2Zf">
+                                <rect key="frame" x="20" y="197" width="68" height="21"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Unknown" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="In3-64-5GN">
-                                <rect key="frame" x="167" y="197" width="227" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unknown" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="In3-64-5GN">
+                                <rect key="frame" x="96" y="197" width="298" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="298" id="wXm-XK-gwe"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone Number: " textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZF-cg-Nrl">
-                                <rect key="frame" x="20" y="226" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_stock_image" translatesAutoresizingMaskIntoConstraints="NO" id="2Cw-VO-9Zw">
+                                <rect key="frame" x="20" y="72" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="HX2-JZ-lAc"/>
+                                    <constraint firstAttribute="width" constant="100" id="ZKy-C4-FoC"/>
+                                    <constraint firstAttribute="width" secondItem="2Cw-VO-9Zw" secondAttribute="height" multiplier="1:1" id="enE-Bc-ZlR"/>
+                                </constraints>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-OJ-G6X">
+                                <rect key="frame" x="20" y="226" width="374" height="502"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDE-ri-KzW">
+                                        <rect key="frame" x="8" y="8" width="358" height="486"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VDE-ri-KzW" firstAttribute="top" secondItem="hKZ-OJ-G6X" secondAttribute="top" constant="8" id="3jb-OZ-yKd"/>
+                                    <constraint firstItem="VDE-ri-KzW" firstAttribute="leading" secondItem="hKZ-OJ-G6X" secondAttribute="leading" constant="8" id="N8U-Nq-Bhz"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nx-d9-2JS">
+                                <rect key="frame" x="128" y="92" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1t5-Kr-moU"/>
+                                    <constraint firstAttribute="height" constant="60" id="nVC-vx-nkM"/>
+                                    <constraint firstAttribute="width" secondItem="5nx-d9-2JS" secondAttribute="height" multiplier="1:1" id="y1P-kS-H4B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="21"/>
+                                <state key="normal" title="contacts">
+                                    <color key="titleColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="editContact:" destination="rSD-bl-cqL" eventType="touchUpInside" id="ThM-Zv-Y92"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="In3-64-5GN" firstAttribute="leading" secondItem="8nQ-IN-2Zf" secondAttribute="trailing" constant="8" id="Bbb-st-qYZ"/>
                             <constraint firstItem="8nQ-IN-2Zf" firstAttribute="leading" secondItem="6Sq-GC-nP4" secondAttribute="leadingMargin" id="Cv2-Kv-R0f"/>
+                            <constraint firstItem="2Cw-VO-9Zw" firstAttribute="top" secondItem="9yQ-NO-6cd" secondAttribute="bottom" constant="8" id="DV4-qq-fSU"/>
+                            <constraint firstItem="hKZ-OJ-G6X" firstAttribute="trailing" secondItem="6Sq-GC-nP4" secondAttribute="trailingMargin" id="FEx-rR-OxK"/>
                             <constraint firstItem="In3-64-5GN" firstAttribute="trailing" secondItem="6Sq-GC-nP4" secondAttribute="trailingMargin" id="H8F-Gs-ODw"/>
+                            <constraint firstItem="8nQ-IN-2Zf" firstAttribute="leading" secondItem="6Sq-GC-nP4" secondAttribute="leadingMargin" id="I4T-XD-5w7"/>
+                            <constraint firstItem="hKZ-OJ-G6X" firstAttribute="top" secondItem="In3-64-5GN" secondAttribute="bottom" constant="8" id="I7o-4j-BxH"/>
+                            <constraint firstItem="pCN-ge-uVn" firstAttribute="top" secondItem="In3-64-5GN" secondAttribute="bottom" constant="518" id="IRb-sJ-r85"/>
+                            <constraint firstItem="8nQ-IN-2Zf" firstAttribute="top" secondItem="2Cw-VO-9Zw" secondAttribute="bottom" constant="25" id="LjG-B6-6f4"/>
+                            <constraint firstItem="pCN-ge-uVn" firstAttribute="top" secondItem="hKZ-OJ-G6X" secondAttribute="bottom" constant="8" id="Tkr-Mn-Ua0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Cw-VO-9Zw" secondAttribute="trailing" constant="274" id="WGS-CU-5gK"/>
+                            <constraint firstItem="8nQ-IN-2Zf" firstAttribute="top" secondItem="2Cw-VO-9Zw" secondAttribute="bottom" constant="25" id="YeT-1n-QdG"/>
+                            <constraint firstItem="2Cw-VO-9Zw" firstAttribute="leading" secondItem="6Sq-GC-nP4" secondAttribute="leadingMargin" id="Yeg-W5-Fcz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Cw-VO-9Zw" secondAttribute="trailing" constant="274" id="ZXG-hG-y4h"/>
+                            <constraint firstItem="2Cw-VO-9Zw" firstAttribute="top" secondItem="9yQ-NO-6cd" secondAttribute="bottom" constant="8" id="epM-4f-sJT"/>
+                            <constraint firstItem="hKZ-OJ-G6X" firstAttribute="leading" secondItem="6Sq-GC-nP4" secondAttribute="leadingMargin" id="gy9-xz-rMx"/>
                             <constraint firstItem="In3-64-5GN" firstAttribute="height" secondItem="8nQ-IN-2Zf" secondAttribute="height" id="lgT-XG-IXR"/>
+                            <constraint firstItem="In3-64-5GN" firstAttribute="trailing" secondItem="6Sq-GC-nP4" secondAttribute="trailingMargin" id="ni2-r2-RRA"/>
+                            <constraint firstItem="In3-64-5GN" firstAttribute="top" secondItem="9yQ-NO-6cd" secondAttribute="bottom" constant="133" id="ntI-dI-mAX"/>
+                            <constraint firstItem="5nx-d9-2JS" firstAttribute="top" secondItem="9yQ-NO-6cd" secondAttribute="bottom" constant="28" id="qex-nn-Xgl"/>
+                            <constraint firstItem="In3-64-5GN" firstAttribute="leading" secondItem="8nQ-IN-2Zf" secondAttribute="trailing" constant="8" id="u6t-jD-SAX"/>
+                            <constraint firstItem="2Cw-VO-9Zw" firstAttribute="leading" secondItem="6Sq-GC-nP4" secondAttribute="leadingMargin" id="vID-DF-RpZ"/>
+                            <constraint firstItem="5nx-d9-2JS" firstAttribute="leading" secondItem="2Cw-VO-9Zw" secondAttribute="trailing" constant="8" id="xP4-Qh-yLg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contactImage" destination="2Cw-VO-9Zw" id="Wjn-LU-sB7"/>
+                        <outlet property="contactLabel" destination="In3-64-5GN" id="4ll-in-AT9"/>
+                        <outlet property="edit" destination="5nx-d9-2JS" id="GJO-oU-F2o"/>
+                        <outlet property="phones" destination="hKZ-OJ-G6X" id="cyX-9C-hBB"/>
+                        <outlet property="stackView" destination="VDE-ri-KzW" id="8EP-DH-tCH"/>
+                        <segue destination="Gqw-4E-OLp" kind="show" identifier="contactToConfirm" id="MN7-q8-kTA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QS8-t6-2sm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -658,11 +718,13 @@
     <resources>
         <image name="alarm_text_icon" width="384" height="368"/>
         <image name="cancel" width="256" height="256"/>
+        <image name="contact_stock_image" width="512" height="512"/>
         <image name="favorites" width="384" height="368"/>
         <image name="map4" width="256" height="256"/>
         <image name="nextbutton" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MN7-q8-kTA"/>
         <segue reference="JQW-JC-vZU"/>
     </inferredMetricsTieBreakers>
 </document>

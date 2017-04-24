@@ -235,7 +235,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         }
         else{
             let contactDet = segue.destination as! ContactDetailsViewController
-//            contactDet.useServiceModelContact(service!, contact!)
+           contactDet.useServiceModelContact(service!, contact!)
         }
         
         }
