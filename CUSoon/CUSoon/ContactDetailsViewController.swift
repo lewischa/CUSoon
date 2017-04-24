@@ -45,7 +45,7 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
     @IBAction func editContact(_ sender: Any) {
         let contactStore = CNContactStore()
         let contactInfo = CNContactViewController(for: self.contact!)
-        contactInfo.present(self, animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+//        contactInfo.present(self, animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         contactInfo.contactStore = contactStore
         contactInfo.displayedPropertyKeys = [CNContactPhoneNumbersKey]
         contactInfo.allowsEditing = true
