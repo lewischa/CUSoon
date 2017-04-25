@@ -20,6 +20,16 @@ class ServiceModel: NSObject {
     let phone: String?
     let name: String?
     
+    override init() {
+        destination = CLLocationCoordinate2D()
+        range = Double()
+        service_type = Int16()
+        title = String()
+        message = String()
+        phone = String()
+        name = String()
+    }
+    
     init(service: ServiceEntity) {
         destination = CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)
         range = service.range

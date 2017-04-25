@@ -15,8 +15,7 @@ class TestSMSViewController: UIViewController {
     @IBOutlet weak var msg: UITextField!
     
     let handler = SMSHandler()
-    let serviceHandler = ServiceHandler()
-    let alarmHandler = AlarmHandler()
+    let serviceHandler = ServiceHandler(ServiceModel(lat: 38.472681, long: -122.760275, _range: 5.0, sType: 2, _title: "Test1", msg: "msg1", _phone: "7072922477", _name: "Chad1"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +46,7 @@ class TestSMSViewController: UIViewController {
     
     @IBAction func notification() {
 //        alarmHandler.play()
-        serviceHandler.scheduleNotification()
+        serviceHandler.fire()
         
     }
 }
@@ -60,18 +59,6 @@ extension TestSMSViewController: UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        print("RESPONSE: \(response.actionIdentifier)")
-//        switch response.actionIdentifier {
-//            case "dismiss":
-//            alarmHandler.stop()
-//            case "status":
-//            alarmHandler.stop()
-//            case UNNotificationDismissActionIdentifier:
-//            alarmHandler.stop()
-//        default:
-//            alarmHandler.stop()
-//        }
-//        alarmHandler.stop()
         completionHandler()
     }
 }

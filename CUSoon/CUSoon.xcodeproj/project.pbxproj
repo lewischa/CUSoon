@@ -12,7 +12,6 @@
 		0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */; };
 		0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */; };
 		0C2212101EA7293E00AAA473 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120F1EA7293E00AAA473 /* Colors.swift */; };
-		0C6F22931EAD56EF00C94CE3 /* AlarmHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F22921EAD56EF00C94CE3 /* AlarmHandler.swift */; };
 		0C6F22951EAD620600C94CE3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F22941EAD620500C94CE3 /* AVFoundation.framework */; };
 		0C6F229C1EAD709400C94CE3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */; };
 		0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */; };
@@ -65,7 +64,6 @@
 		0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRunning.swift; sourceTree = "<group>"; };
 		0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceRunning+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C22120F1EA7293E00AAA473 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0C6F22921EAD56EF00C94CE3 /* AlarmHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmHandler.swift; sourceTree = "<group>"; };
 		0C6F22941EAD620500C94CE3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
@@ -144,7 +142,6 @@
 				0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */,
 				0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */,
 				0C87ADD91EAC34EC0032F255 /* SMSModel.swift */,
-				0C6F22921EAD56EF00C94CE3 /* AlarmHandler.swift */,
 				0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */,
 				0CB6EEDC1E9EECD500FFCDBE /* CUSoon */,
 				0CB6EEF41E9EECD500FFCDBE /* CUSoonTests */,
@@ -398,7 +395,6 @@
 				423DAE6D1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift in Sources */,
 				0CB6EF1E1E9F093900FFCDBE /* CoreDataCommonMethods.swift in Sources */,
 				0CB6EF221E9F0DF000FFCDBE /* ServiceEntity+CoreDataProperties.swift in Sources */,
-				0C6F22931EAD56EF00C94CE3 /* AlarmHandler.swift in Sources */,
 				0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */,
 				0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */,
 				0C0AC72C1E9F2AD400BEBD42 /* ServiceModel.swift in Sources */,

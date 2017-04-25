@@ -15,7 +15,7 @@ struct SMSModel {
 //    "Sent from CUSoon."
     
     init(to: String, body: String) {
-        cusoonResponse = "Sent from CUSoon."
+        cusoonResponse = "Sent from CUSoon app."
         if to.characters.count == 10 {
             number = "%2B1"
             number! += to
