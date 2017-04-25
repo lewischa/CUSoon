@@ -107,7 +107,6 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         print(services.selectedSegmentIndex)
         // If set to anything other than alarm service, collect contact info
         if services.selectedSegmentIndex > 0{
-//            self.performSegue(withIdentifier: "contactInfo", sender: nil)
             let entity = CNEntityType.contacts
             let authStatus = CNContactStore.authorizationStatus(for: entity)
             
@@ -185,7 +184,6 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         searchController.dimsBackgroundDuringPresentation = true
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
-        //searchController.definesPresentationContext = true
         self.searchController.searchBar.delegate = self
         
         
@@ -236,28 +234,8 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
             if let placemark = localSearchResponse?.mapItems[0].placemark{
                 self.dropPinZoomIn(placemark: placemark)
             }
-            //3
-//            self.pointAnnotation = MKPointAnnotation()
-//            self.pointAnnotation.title = searchBar.text
-//            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
-//            
-//            
-//            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-//            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-//            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
