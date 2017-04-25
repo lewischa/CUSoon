@@ -74,8 +74,9 @@ class DatabaseAccessor: NSObject {
         let msgPred = NSPredicate(format: "message == %@", service.message!)
         let phonePred = NSPredicate(format: "phone == %@", service.phone!)
         let namePred = NSPredicate(format: "name == %@", service.name!)
+        let savingPred = NSPredicate(format: "addingFromFavorites == %@", NSNumber(booleanLiteral: service.addingFromFavorites))
         
-        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred])
+        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred, savingPred])
 
         fetchRequest.predicate = compound
         fetchRequest.returnsObjectsAsFaults = false
@@ -113,6 +114,7 @@ class DatabaseAccessor: NSObject {
         
             toInsert.range = service.range
             toInsert.service_type = service.service_type
+            toInsert.addingFromFavorites = service.addingFromFavorites
         
             if let title = service.title {
                 toInsert.title = title
@@ -129,6 +131,11 @@ class DatabaseAccessor: NSObject {
             }
             if let name = service.name {
                 toInsert.name = name
+            }
+            if let addr = service.address {
+                toInsert.address = addr
+            } else {
+                toInsert.address = ""
             }
             coreDataContext.saveContext()
         }
@@ -149,8 +156,9 @@ class DatabaseAccessor: NSObject {
         let msgPred = NSPredicate(format: "message == %@", old.message!)
         let phonePred = NSPredicate(format: "phone == %@", old.phone!)
         let namePred = NSPredicate(format: "name == %@", old.name!)
+        let savingPred = NSPredicate(format: "addingFromFavorites == %@", NSNumber(booleanLiteral: old.addingFromFavorites))
         
-        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred])
+        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred, savingPred])
         
         fetchRequest.predicate = compound
         fetchRequest.returnsObjectsAsFaults = false
@@ -168,6 +176,7 @@ class DatabaseAccessor: NSObject {
                 services[0].message = new.message
                 services[0].phone = new.phone
                 services[0].name = new.name
+                services[0].addingFromFavorites = new.addingFromFavorites
                 coreDataContext.saveContext()
             }
         } catch {
@@ -190,8 +199,9 @@ class DatabaseAccessor: NSObject {
         let msgPred = NSPredicate(format: "message == %@", service.message!)
         let phonePred = NSPredicate(format: "phone == %@", service.phone!)
         let namePred = NSPredicate(format: "name == %@", service.name!)
+        let savingPred = NSPredicate(format: "addingFromFavorites == %@", NSNumber(booleanLiteral: service.addingFromFavorites))
         
-        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred])
+        let compound: NSCompoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [latPred, longPred, rangePred, servPred, titlePred, msgPred, phonePred, namePred, savingPred])
         
         fetchRequest.predicate = compound
         fetchRequest.returnsObjectsAsFaults = false
