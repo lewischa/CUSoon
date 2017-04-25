@@ -17,7 +17,8 @@ class LocationSearchTableViewController: UITableViewController, UISearchResultsU
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = Colors().background
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -51,8 +52,12 @@ class LocationSearchTableViewController: UITableViewController, UISearchResultsU
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedItem = matchingItem[indexPath.row].placemark
         cell.textLabel?.text = selectedItem.name
+        cell.textLabel?.textColor = Colors().titleOrage
+        cell.textLabel?.font = UIFont(name: "AgencyFB-Reg", size: 20)
         cell.detailTextLabel?.text = parseAddress(selectedItem: selectedItem)
-        
+        cell.detailTextLabel?.textColor = Colors().blueText
+        cell.detailTextLabel?.font = UIFont(name: "AgencyFB-Reg", size: 20)
+        cell.backgroundColor = Colors().background
 
         // Configure the cell...
 
