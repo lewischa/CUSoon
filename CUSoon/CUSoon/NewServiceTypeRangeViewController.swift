@@ -91,6 +91,11 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
             nextButton.isUserInteractionEnabled = true
         }
     }
+    
+    func useServiceModel(_ service: ServiceModel){
+        self.service = service
+    }
+    
     @IBAction func onNextClick(_ sender: Any) {
         //If nil, no data collected yet. Collect data for segue
         if service == nil{
