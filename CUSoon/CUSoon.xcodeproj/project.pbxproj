@@ -112,13 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				0C6F229C1EAD709400C94CE3 /* NotificationCenter.framework in Frameworks */,
 				0C6F22951EAD620600C94CE3 /* AVFoundation.framework in Frameworks */,
-=======
 				42CAE5641EAAE62D007051E7 /* ContactsUI.framework in Frameworks */,
 				42CAE5621EAAE623007051E7 /* Contacts.framework in Frameworks */,
->>>>>>> master
 				423DAE7B1EA433FF00EF1A33 /* CoreLocation.framework in Frameworks */,
 				423DAE791EA433F500EF1A33 /* MapKit.framework in Frameworks */,
 			);
@@ -244,13 +241,10 @@
 		423DAE771EA433F500EF1A33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */,
 				0C6F22941EAD620500C94CE3 /* AVFoundation.framework */,
-=======
 				42CAE5631EAAE62D007051E7 /* ContactsUI.framework */,
 				42CAE5611EAAE623007051E7 /* Contacts.framework */,
->>>>>>> master
 				423DAE7A1EA433FF00EF1A33 /* CoreLocation.framework */,
 				423DAE781EA433F500EF1A33 /* MapKit.framework */,
 			);
