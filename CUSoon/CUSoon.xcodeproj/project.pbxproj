@@ -12,13 +12,13 @@
 		0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */; };
 		0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */; };
 		0C2212101EA7293E00AAA473 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120F1EA7293E00AAA473 /* Colors.swift */; };
-		0C4B58971EAFD59900BF234D /* piano_beat_mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C4B58991EAFD59900BF234D /* piano_beat_mix.wav */; };
 		0C6F22951EAD620600C94CE3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F22941EAD620500C94CE3 /* AVFoundation.framework */; };
 		0C6F229C1EAD709400C94CE3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */; };
 		0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */; };
 		0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADD91EAC34EC0032F255 /* SMSModel.swift */; };
 		0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */; };
 		0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */; };
+		0CABD0B51EAFE60200EBD813 /* piano_beat_mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */; };
 		0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */; };
 		0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */; };
 		0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */; };
@@ -68,14 +68,13 @@
 		0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRunning.swift; sourceTree = "<group>"; };
 		0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceRunning+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C22120F1EA7293E00AAA473 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		0C4B58981EAFD59900BF234D /* en */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = en; path = en.lproj/piano_beat_mix.wav; sourceTree = "<group>"; };
-		0C4B589A1EAFD5A300BF234D /* Base */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Base; path = Base.lproj/piano_beat_mix.wav; sourceTree = "<group>"; };
 		0C6F22941EAD620500C94CE3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
 		0C87ADD91EAC34EC0032F255 /* SMSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSModel.swift; sourceTree = "<group>"; };
 		0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSHandler.swift; sourceTree = "<group>"; };
 		0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSMSViewController.swift; sourceTree = "<group>"; };
+		0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano_beat_mix.wav; sourceTree = "<group>"; };
 		0CB6EEDA1E9EECD500FFCDBE /* CUSoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUSoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +141,7 @@
 		0C6F22981EAD662700C94CE3 /* AlarmSounds */ = {
 			isa = PBXGroup;
 			children = (
-				0C4B58991EAFD59900BF234D /* piano_beat_mix.wav */,
+				0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */,
 			);
 			name = AlarmSounds;
 			sourceTree = "<group>";
@@ -367,9 +366,9 @@
 			files = (
 				0CB6EEEB1E9EECD500FFCDBE /* LaunchScreen.storyboard in Resources */,
 				0CB6EEE81E9EECD500FFCDBE /* Assets.xcassets in Resources */,
+				0CABD0B51EAFE60200EBD813 /* piano_beat_mix.wav in Resources */,
 				0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */,
 				423DAE761EA4171600EF1A33 /* Agency_FB.ttf in Resources */,
-				0C4B58971EAFD59900BF234D /* piano_beat_mix.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,16 +451,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0C4B58991EAFD59900BF234D /* piano_beat_mix.wav */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C4B58981EAFD59900BF234D /* en */,
-				0C4B589A1EAFD5A300BF234D /* Base */,
-			);
-			name = piano_beat_mix.wav;
-			path = "../../../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album";
-			sourceTree = "<group>";
-		};
 		0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
