@@ -9,19 +9,16 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Contacts
+import ContactsUI
 
 protocol HandleMapSearch {
     func dropPinZoomIn(placemark: MKPlacemark)
 }
 
-class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate{
-    var range: Double = 10.0
-    var lManager = CLLocationManager()
-    var selectedPin: MKPlacemark? = nil
-    
+class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate, CNContactPickerDelegate, CNContactViewControllerDelegate{
 
-   
-    
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var mapPlace: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var mapView: MKMapView!
@@ -29,6 +26,10 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     
+    let colors = Colors()
+    var range: Double = 10.0
+    var lManager = CLLocationManager()
+    var selectedPin: MKPlacemark? = nil
     var searchController:UISearchController!
     var annotation:MKAnnotation!
     var localSearchRequest:MKLocalSearchRequest!
@@ -37,12 +38,18 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     var error:NSError!
     var pointAnnotation:MKPointAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
+    var service: ServiceModel? = nil
+    var saving = false
+    let contactStore = CNContactStore.init()
+    var contact: CNContact? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        navBar.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        navBar.barTintColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
+        view.backgroundColor = colors.background
+        navBar.backgroundColor = colors.background
+        navBar.barTintColor = colors.background
         
         slider.value = Float(range)
         rangeLabel.text = String(range) + " miles"
@@ -63,11 +70,122 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         
         lManager.stopUpdatingLocation()
         
+        updateNextButtonSettings()
+        
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateNextButtonSettings(){
+        if selectedPin == nil && service == nil{
+            nextButton.alpha = 0.5
+            nextButton.isUserInteractionEnabled = false
+        }
+        else{
+            nextButton.alpha = 1
+            nextButton.isUserInteractionEnabled = true
+        }
+    }
+    @IBAction func onNextClick(_ sender: Any) {
+        //If nil, no data collected yet. Collect data for segue
+        if service == nil{
+            print("service available")
+            service = ServiceModel(dest: (selectedPin?.coordinate)!, _range: range, sType: Int16(services.selectedSegmentIndex), _title: "", msg: "", _phone: "", _name: "")
+        }
+            //Data collected, but user came back and made possible changes, update info
+        else{
+            service?.destination = (selectedPin?.coordinate)!
+            service?.range = range
+            service?.service_type = Int16(services.selectedSegmentIndex)
+        }
+        
+        print(services.selectedSegmentIndex)
+        // If set to anything other than alarm service, collect contact info
+        if services.selectedSegmentIndex > 0{
+//            self.performSegue(withIdentifier: "contactInfo", sender: nil)
+            let entity = CNEntityType.contacts
+            let authStatus = CNContactStore.authorizationStatus(for: entity)
+            
+            if authStatus == CNAuthorizationStatus.notDetermined{
+                
+                contactStore.requestAccess(for: entity, completionHandler: { (success, nil) in
+                    if success{
+                        self.openContacts()
+                    }
+                })
+            }
+            else if authStatus == CNAuthorizationStatus.authorized{
+                self.openContacts()
+            }
+            else{
+                print("not authorized")
+            }
+        }
+            //Segue to confirmation page
+        else{
+            self.performSegue(withIdentifier: "confirmService", sender: nil)
+        }
+    }
+    
+    func openContacts(){
+        let contactPicker = CNContactPickerViewController.init()
+        contactPicker.delegate = self
+        self.present(contactPicker, animated: true, completion: nil)
+    }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        picker.dismiss(animated: true){
+            
+        }
+        
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        self.contact = contact
+        self.performSegue(withIdentifier: "contactInfo", sender: nil)
+//        let contactInfo = CNContactViewController(for: contact)
+//        contactInfo.contactStore = self.contactStore
+//        contactInfo.displayedPropertyKeys = [CNContactPhoneNumbersKey]
+//        //contactInfo.delegate = self
+//        contactInfo.allowsEditing = true
+//        contactInfo.allowsActions = false
+//        self.navigationController?.pushViewController(contactInfo, animated: true)
+        
+//        service?.name = "\(contact.givenName) \(contact.familyName)"
+//        var phoneNo = ""
+//        let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
+//        var mobileNums: [String] = []
+//        for number in contact.phoneNumbers{
+//            let num = number.value as CNPhoneNumber
+//            if number.label == CNLabelPhoneNumberMobile {
+//                mobileNums.append(num.value(forKey: "digits") as! String)
+//                break
+//            }
+//        }
+//        print(mobileNums)
+//        if mobileNums.isEmpty{
+//            
+//        }
+//        
+////        phoneNo = phoneString! as! String
+//        //print(contact.phoneNumbers)
+//        print(phoneNo)
+    }
+    
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        defer{navigationController?.popViewController(animated: true)}
+
+    }
+    
+    
+    
+    func save(){
+            self.saving = true
     }
     
 
@@ -110,15 +228,27 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "confirmService"{
+            let confirmService = segue.destination as! ConfirmServiceViewController
+            confirmService.useServiceModel(serviceModel: service!)
+        }
+        else{
+            let contactDet = segue.destination as! ContactDetailsViewController
+           contactDet.useServiceModelContact(service!, contact!)
+        }
+        
+        }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
-        //1
+        
         searchBar.resignFirstResponder()
         dismiss(animated: true, completion: nil)
         if self.mapView.annotations.count != 0{
             annotation = self.mapView.annotations[0]
             self.mapView.removeAnnotation(annotation)
         }
-        //2
+        
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
         localSearch = MKLocalSearch(request: localSearchRequest)
@@ -130,17 +260,22 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
+            if let placemark = localSearchResponse?.mapItems[0].placemark{
+                self.dropPinZoomIn(placemark: placemark)
+            }
             //3
-            self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = searchBar.text
-            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
-            
-            
-            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
-            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
-            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
+//            self.pointAnnotation = MKPointAnnotation()
+//            self.pointAnnotation.title = searchBar.text
+//            self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
+//            
+//            
+//            self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
+//            self.mapView.centerCoordinate = self.pointAnnotation.coordinate
+//            self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
         }
     }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -152,6 +287,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     */
 
 }
+
 
 extension NewServiceTypeRangeViewController: HandleMapSearch{
     func dropPinZoomIn(placemark: MKPlacemark) {
@@ -167,5 +303,6 @@ extension NewServiceTypeRangeViewController: HandleMapSearch{
         let span = MKCoordinateSpanMake(0.03, 0.03)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         mapView.setRegion(region, animated: true)
+        updateNextButtonSettings()
     }
 }
