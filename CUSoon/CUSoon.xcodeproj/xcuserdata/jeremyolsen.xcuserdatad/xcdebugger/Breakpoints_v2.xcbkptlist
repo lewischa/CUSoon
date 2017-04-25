@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/NewServiceTypeRangeViewController.swift"
-            timestampString = "514663233.664827"
+            timestampString = "514781833.693222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "showSearchBar(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/NewServiceTypeRangeViewController.swift"
-            timestampString = "514663233.664827"
+            timestampString = "514781833.693222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "showSearchBar(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -161,22 +161,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CUSoon/NewServiceTypeRangeViewController.swift"
-            timestampString = "514663233.664827"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "contactPicker(_:didSelect:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "CUSoon/ConfirmServiceViewController.swift"
             timestampString = "514664634.423815"
             startingColumnNumber = "9223372036854775807"
@@ -194,11 +178,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/NewServiceTypeRangeViewController.swift"
-            timestampString = "514663233.664827"
+            timestampString = "514781833.693222"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -210,12 +194,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
+            timestampString = "514781933.372971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "useServiceModelContact(_:_:)"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "selectNumber(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -226,11 +210,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
+            timestampString = "514781933.372971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -242,11 +226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
+            timestampString = "514781933.372971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -258,44 +242,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "loadData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514703225.042116"
+            timestampString = "514781933.372971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "162"
             endingLineNumber = "162"
-            landmarkName = "prepare(for:sender:)"
+            landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -306,13 +258,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CUSoon/ContactDetailsViewController.swift"
-            timestampString = "514701820.906718"
+            timestampString = "514781933.372971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "editContact(_:)"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "loadData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CUSoon/ContactDetailsViewController.swift"
+            timestampString = "514781933.372971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "ContactDetailsViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -359,6 +327,70 @@
                   startingLineNumber = "67"
                   endingLineNumber = "67"
                   offsetFromSymbolStart = "3184">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CUSoon/ContactDetailsViewController.swift"
+            timestampString = "514781933.372971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "editContact(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CUSoon/ContactDetailsViewController.swift"
+            timestampString = "514781933.372971"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "done(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CUSoon.ContactDetailsViewController.done (Any) -&gt; ()"
+                  moduleName = "CUSoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeremyolsen/Desktop/CUSoon/CUSoon/CUSoon/ContactDetailsViewController.swift"
+                  timestampString = "514761475.571283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CUSoon.ContactDetailsViewController.(done (Any) -&gt; ()).(closure #1)"
+                  moduleName = "CUSoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jeremyolsen/Desktop/CUSoon/CUSoon/CUSoon/ContactDetailsViewController.swift"
+                  timestampString = "514761475.572632"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -92,9 +92,12 @@ class ViewController: UIViewController {
         /*
          Insert entities into database
          */
-        accessor.save(service: serv1)
-        accessor.save(service: serv2)
-        accessor.save(service: serv3)
+        serv1.saveToFavorites()
+        serv2.saveToFavorites()
+        serv3.saveToFavorites()
+//        accessor.save(service: serv1)
+//        accessor.save(service: serv2)
+//        accessor.save(service: serv3)
         
         /*
          Fetch all from database

@@ -16,6 +16,7 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
     var service: ServiceModel? = nil
     var contact: CNContact? = nil
 
+    @IBOutlet weak var contactsButton: UIButton!
     @IBOutlet weak var edit: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var phones: UIScrollView!
@@ -27,10 +28,12 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
         
         view.backgroundColor = colors.background
         contactImage.backgroundColor = colors.background
+        
 //        stackView.alpha = 0
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
         print(contact)
         edit.layer.cornerRadius = edit.frame.width/2
+        contactsButton.layer.cornerRadius = edit.frame.width/2
         loadData()
         
 
@@ -41,29 +44,58 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func changeContact(_ sender: Any) {
+        let contactPicker = CNContactPickerViewController.init()
+        contactPicker.delegate = self
+        self.present(contactPicker, animated: true, completion: nil)
+    }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        picker.dismiss(animated: true){
+            
+        }
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        self.contact = contact
+        self.stackView.subviews.forEach({$0.removeFromSuperview()})
+        self.loadData()
+    }
     
     @IBAction func editContact(_ sender: Any) {
         let contactStore = CNContactStore()
         let contactInfo = CNContactViewController(for: self.contact!)
-//        contactInfo.present(self, animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
         contactInfo.contactStore = contactStore
         contactInfo.displayedPropertyKeys = [CNContactPhoneNumbersKey]
         contactInfo.allowsEditing = true
-        contactInfo.allowsActions = true
+        contactInfo.allowsActions = false
         contactInfo.delegate = self
-//        self.navigationController?.addChildViewController(contactInfo)
-//        self.present(self.navigationController!, animated: true, completion: nil)
         
         self.navigationController?.pushViewController(contactInfo, animated: true)
-        
+    }
+    
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        print("*********in contactViewController**************")
         self.stackView.subviews.forEach({$0.removeFromSuperview()})
-//        do{
-//            try self.contact = contactStore.unifiedContact(withIdentifier: (self.contact?.identifier)!, keysToFetch: [CNContactPhoneNumbersKey as CNKeyDescriptor])}
-//        catch{
-//            
-//        }
-//        self.contact.
+        self.contact = contact
         self.loadData()
+        
+    }
+    
+    @IBAction func done(_ sender: Any){
+        print("in done")
+        self.stackView.subviews.forEach({$0.removeFromSuperview()})
+                do{
+                    let contactStore = CNContactStore()
+                    try self.contact = contactStore.unifiedContact(withIdentifier: (self.contact?.identifier)!, keysToFetch: [CNContactPhoneNumbersKey as CNKeyDescriptor])}
+                catch{
+        
+                }
+        self.loadData()
+        let contactViewCont = sender as? ContactDetailsViewController
+        contactViewCont?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        
     }
     
     

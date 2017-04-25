@@ -148,33 +148,6 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
         self.contact = contact
         self.performSegue(withIdentifier: "contactInfo", sender: nil)
-//        let contactInfo = CNContactViewController(for: contact)
-//        contactInfo.contactStore = self.contactStore
-//        contactInfo.displayedPropertyKeys = [CNContactPhoneNumbersKey]
-//        //contactInfo.delegate = self
-//        contactInfo.allowsEditing = true
-//        contactInfo.allowsActions = false
-//        self.navigationController?.pushViewController(contactInfo, animated: true)
-        
-//        service?.name = "\(contact.givenName) \(contact.familyName)"
-//        var phoneNo = ""
-//        let phoneString = ((((contact.phoneNumbers[0] as AnyObject).value(forKey: "labelValuePair") as AnyObject).value(forKey: "value") as AnyObject).value(forKey: "stringValue"))
-//        var mobileNums: [String] = []
-//        for number in contact.phoneNumbers{
-//            let num = number.value as CNPhoneNumber
-//            if number.label == CNLabelPhoneNumberMobile {
-//                mobileNums.append(num.value(forKey: "digits") as! String)
-//                break
-//            }
-//        }
-//        print(mobileNums)
-//        if mobileNums.isEmpty{
-//            
-//        }
-//        
-////        phoneNo = phoneString! as! String
-//        //print(contact.phoneNumbers)
-//        print(phoneNo)
     }
     
     func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
