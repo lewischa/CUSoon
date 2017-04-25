@@ -12,6 +12,13 @@
 		0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */; };
 		0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */; };
 		0C2212101EA7293E00AAA473 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C22120F1EA7293E00AAA473 /* Colors.swift */; };
+		0C6F22951EAD620600C94CE3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F22941EAD620500C94CE3 /* AVFoundation.framework */; };
+		0C6F229C1EAD709400C94CE3 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */; };
+		0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */; };
+		0C6F22A01EAD88D300C94CE3 /* piano_beat_mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0C6F229F1EAD88D300C94CE3 /* piano_beat_mix.wav */; };
+		0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADD91EAC34EC0032F255 /* SMSModel.swift */; };
+		0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */; };
+		0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */; };
 		0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */; };
 		0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */; };
 		0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */; };
@@ -61,6 +68,13 @@
 		0C22120B1EA71C1E00AAA473 /* ServiceRunning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceRunning.swift; sourceTree = "<group>"; };
 		0C22120C1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ServiceRunning+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0C22120F1EA7293E00AAA473 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		0C6F22941EAD620500C94CE3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
+		0C6F229F1EAD88D300C94CE3 /* piano_beat_mix.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = piano_beat_mix.wav; path = "../../../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/piano_beat_mix.wav"; sourceTree = "<group>"; };
+		0C87ADD91EAC34EC0032F255 /* SMSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSModel.swift; sourceTree = "<group>"; };
+		0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSHandler.swift; sourceTree = "<group>"; };
+		0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSMSViewController.swift; sourceTree = "<group>"; };
 		0CB6EEDA1E9EECD500FFCDBE /* CUSoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUSoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6F229C1EAD709400C94CE3 /* NotificationCenter.framework in Frameworks */,
+				0C6F22951EAD620600C94CE3 /* AVFoundation.framework in Frameworks */,
 				42CAE5641EAAE62D007051E7 /* ContactsUI.framework in Frameworks */,
 				42CAE5621EAAE623007051E7 /* Contacts.framework in Frameworks */,
 				423DAE7B1EA433FF00EF1A33 /* CoreLocation.framework in Frameworks */,
@@ -122,9 +138,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C6F22981EAD662700C94CE3 /* AlarmSounds */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F229F1EAD88D300C94CE3 /* piano_beat_mix.wav */,
+			);
+			name = AlarmSounds;
+			sourceTree = "<group>";
+		};
 		0CB6EED11E9EECD400FFCDBE = {
 			isa = PBXGroup;
 			children = (
+				0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */,
+				0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */,
+				0C87ADD91EAC34EC0032F255 /* SMSModel.swift */,
+				0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */,
 				0CB6EEDC1E9EECD500FFCDBE /* CUSoon */,
 				0CB6EEF41E9EECD500FFCDBE /* CUSoonTests */,
 				0CB6EEFF1E9EECD500FFCDBE /* CUSoonUITests */,
@@ -146,6 +174,7 @@
 		0CB6EEDC1E9EECD500FFCDBE /* CUSoon */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F22981EAD662700C94CE3 /* AlarmSounds */,
 				0CB6EF1A1E9F06A700FFCDBE /* Database */,
 				0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */,
 				0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */,
@@ -212,6 +241,8 @@
 		423DAE771EA433F500EF1A33 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */,
+				0C6F22941EAD620500C94CE3 /* AVFoundation.framework */,
 				42CAE5631EAAE62D007051E7 /* ContactsUI.framework */,
 				42CAE5611EAAE623007051E7 /* Contacts.framework */,
 				423DAE7A1EA433FF00EF1A33 /* CoreLocation.framework */,
@@ -290,6 +321,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = JHF6RYCS32;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					0CB6EEF01E9EECD500FFCDBE = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -332,6 +368,7 @@
 				0CB6EEE81E9EECD500FFCDBE /* Assets.xcassets in Resources */,
 				0CB6EEE31E9EECD500FFCDBE /* Main.storyboard in Resources */,
 				423DAE761EA4171600EF1A33 /* Agency_FB.ttf in Resources */,
+				0C6F22A01EAD88D300C94CE3 /* piano_beat_mix.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */,
 				3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */,
 				42CAE5681EABEC30007051E7 /* ContactDetailsViewController.swift in Sources */,
 				423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */,
@@ -364,6 +402,7 @@
 				0C0AC72E1E9F2F2300BEBD42 /* DatabaseAccessor.swift in Sources */,
 				0CB6EEE61E9EECD500FFCDBE /* CUSoon.xcdatamodeld in Sources */,
 				0C22120E1EA71C1E00AAA473 /* ServiceRunning+CoreDataProperties.swift in Sources */,
+				0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */,
 				0CB6EF211E9F0DF000FFCDBE /* ServiceEntity.swift in Sources */,
 				0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */,
 				42CAE5661EABC52E007051E7 /* ConfirmServiceViewController.swift in Sources */,
@@ -375,6 +414,8 @@
 				0C22120D1EA71C1E00AAA473 /* ServiceRunning.swift in Sources */,
 				0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */,
 				0C0AC72C1E9F2AD400BEBD42 /* ServiceModel.swift in Sources */,
+				0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */,
+				0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
