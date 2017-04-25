@@ -11,6 +11,7 @@ import CoreLocation
 import Contacts
 
 class ServiceModel: NSObject {
+    let accessor = DatabaseAccessor()
     
     var destination: CLLocationCoordinate2D
     var range: Double
@@ -19,6 +20,20 @@ class ServiceModel: NSObject {
     var message: String?
     var phone: String?
     var name: String?
+    var address: String?
+    var addingFromFavorites: Bool
+    
+    override init() {
+        destination = CLLocationCoordinate2D()
+        range = Double()
+        service_type = Int16()
+        title = "Default Title"
+        message = ""
+        phone = ""
+        name = "No name"
+        address = ""
+        addingFromFavorites = false
+    }
     
     init(service: ServiceEntity) {
         destination = CLLocationCoordinate2D(latitude: service.latitude, longitude: service.longitude)
@@ -28,6 +43,8 @@ class ServiceModel: NSObject {
         message = service.message
         phone = service.phone
         name = service.name
+        address = service.address
+        addingFromFavorites = service.addingFromFavorites
         super.init()
     }
     
@@ -39,6 +56,8 @@ class ServiceModel: NSObject {
         message = msg
         phone = _phone
         name = _name
+        address = ""
+        addingFromFavorites = false
         super.init()
     }
     
@@ -50,6 +69,21 @@ class ServiceModel: NSObject {
         message = msg
         phone = _phone
         name = _name
+        address = ""
+        addingFromFavorites = false
+        super.init()
+    }
+    
+    init(dest: CLLocationCoordinate2D, _range: Double, sType: Int16, _title: String, msg: String, _phone: String, _name: String, addFromFavorites: Bool) {
+        destination = dest
+        range = _range
+        service_type = sType
+        title = _title
+        message = msg
+        phone = _phone
+        name = _name
+        address = ""
+        addingFromFavorites = addFromFavorites
         super.init()
     }
     
@@ -58,10 +92,12 @@ class ServiceModel: NSObject {
         print("long: \(destination.longitude)")
         print("range: \(range)")
         print("service_type: \(service_type)")
-        print("title: \(title)")
-        print("message: \(message)")
-        print("phone: \(phone)")
-        print("name: \(name)")
+        print("title: \(String(describing: title))")
+        print("message: \(String(describing: message))")
+        print("phone: \(String(describing: phone))")
+        print("name: \(String(describing: name))")
+        print("address: \(String(describing: address))")
+        print("savingFromFavorites: \(addingFromFavorites)")
     }
     
     func reverseGeocode(completion: @escaping (_ address: String) -> Void) {
@@ -96,6 +132,13 @@ class ServiceModel: NSObject {
                 }
             }
             completion(addressToReturn)
+        })
+    }
+    
+    func saveToFavorites() {
+        reverseGeocode(completion: {(addressToUse) in
+            self.address = addressToUse
+            self.accessor.save(service: self)
         })
     }
 }
