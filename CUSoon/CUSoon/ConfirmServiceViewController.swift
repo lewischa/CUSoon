@@ -104,7 +104,10 @@ class ConfirmServiceViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let status = segue.destination as! StatusViewController
+        if segue.identifier == "confirmToStatusSegue" {
+            let status = segue.destination as! StatusViewController
+            status.setServiceForSegue(service: service!)
+        }
         
     }
     
