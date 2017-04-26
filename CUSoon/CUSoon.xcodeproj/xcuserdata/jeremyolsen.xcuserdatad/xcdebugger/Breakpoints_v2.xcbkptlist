@@ -167,8 +167,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "79"
             endingLineNumber = "79"
-            landmarkName = "ConfirmServiceViewController"
-            landmarkType = "3">
+            landmarkName = "setLabels()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
