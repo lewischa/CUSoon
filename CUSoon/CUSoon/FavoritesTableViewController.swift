@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FavoritesTableViewController: UITableViewController {
     
@@ -128,7 +129,10 @@ class FavoritesTableViewController: UITableViewController {
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {(action) in
                 self.accessor.delete(service: self.serviceFavorites[indexPath.row])
                 self.serviceFavorites.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .fade)
+                DispatchQueue.main.async {
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    AudioServicesPlaySystemSound(1001)
+                }
             })
             alert.addAction(cancelAction)
             alert.addAction(deleteAction)

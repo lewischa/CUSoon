@@ -22,17 +22,19 @@ class ServiceModel: NSObject {
     var name: String?
     var address: String?
     var addingFromFavorites: Bool
+    var isFavorite: Bool
     
     override init() {
         destination = CLLocationCoordinate2D()
         range = Double()
         service_type = Int16()
-        title = "Default Title"
+        title = "No Title"
         message = ""
         phone = ""
-        name = "No name"
+        name = ""
         address = ""
         addingFromFavorites = false
+        isFavorite = false
     }
     
     init(service: ServiceEntity) {
@@ -45,6 +47,7 @@ class ServiceModel: NSObject {
         name = service.name
         address = service.address
         addingFromFavorites = service.addingFromFavorites
+        isFavorite = true
         super.init()
     }
     
@@ -52,12 +55,17 @@ class ServiceModel: NSObject {
         destination = CLLocationCoordinate2D(latitude: lat, longitude: long)
         range = _range
         service_type = sType
-        title = _title
+        if _title.isEmpty {
+            title = "No Title"
+        } else {
+            title = _title
+        }
         message = msg
         phone = _phone
         name = _name
         address = ""
         addingFromFavorites = false
+        isFavorite = false
         super.init()
     }
     
@@ -65,12 +73,18 @@ class ServiceModel: NSObject {
         destination = dest
         range = _range
         service_type = sType
-        title = _title
+        if _title.isEmpty {
+            title = "No Title"
+        } else {
+            title = _title
+        }
+        
         message = msg
         phone = _phone
         name = _name
         address = ""
         addingFromFavorites = false
+        isFavorite = false
         super.init()
     }
     
@@ -78,14 +92,26 @@ class ServiceModel: NSObject {
         destination = dest
         range = _range
         service_type = sType
-        title = _title
+        if _title.isEmpty {
+            title = "No Title"
+        } else {
+            title = _title
+        }
         message = msg
         phone = _phone
         name = _name
         address = ""
         addingFromFavorites = addFromFavorites
-        super.init()
+        isFavorite = false
     }
+    
+//    func checkAndSetTitle(_ titleToUse: String) {
+//        if title == "" {
+//            title = "No Title"
+//        } else {
+//            title = _title
+//        }
+//    }
     
     func printService() {
         print("lat: \(destination.latitude)")
@@ -138,6 +164,7 @@ class ServiceModel: NSObject {
     func saveToFavorites() {
         reverseGeocode(completion: {(addressToUse) in
             self.address = addressToUse
+            self.isFavorite = true
             self.accessor.save(service: self)
         })
     }
