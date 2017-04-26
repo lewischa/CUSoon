@@ -81,7 +81,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     }
     
     func updateNextButtonSettings(){
-        if selectedPin == nil || service == nil{
+        if selectedPin == nil{
             nextButton.alpha = 0.5
             nextButton.isUserInteractionEnabled = false
         }
