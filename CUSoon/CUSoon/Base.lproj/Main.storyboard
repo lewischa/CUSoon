@@ -943,6 +943,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="QVC-Fi-uKq"/>
         <segue reference="JQW-JC-vZU"/>
 =======
@@ -959,14 +960,22 @@
         <segue reference="QVC-Fi-uKq"/>
         <segue reference="JQW-JC-vZU"/>
 >>>>>>> master
+=======
+
+        <segue reference="QVC-Fi-uKq"/>
+        <segue reference="JQW-JC-vZU"/>
+>>>>>>> origin/UIDevelopment
 
         <segue reference="Nsg-9W-NLl"/>
         <segue reference="ajG-jd-I3C"/>
         <segue reference="9FH-Oe-qxn"/>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> master
 =======
 >>>>>>> master
+=======
+>>>>>>> origin/UIDevelopment
     </inferredMetricsTieBreakers>
 </document>
