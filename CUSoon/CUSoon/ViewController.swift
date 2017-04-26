@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var favoritesLabel: UILabel!
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    var currentService = ServiceModel(lat: 38.472681, long: -122.760275, _range: 5.0, sType: 0, _title: "Test1", msg: "msg1", _phone: "7072922477", _name: "Chad1")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +32,12 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         // MARK: - Delete All
 //        accessor.dropTable()
-        
         initializeDatabase()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
 //        if accessor.isServiceRunning() {
 //            activateStatusButton()
 //            deactivateNewAndFavoritesButtons()
@@ -190,7 +189,16 @@ class ViewController: UIViewController {
         
         backButton.tintColor = UIColor(red: 0/255, green: 255/255, blue: 204/255, alpha: 1)
         navigationItem.backBarButtonItem = backButton
+        
+        if segue.identifier == "serviceSegue"{
+            let statusVC = segue.destination as! StatusViewController
+            statusVC.setServiceForSegue(service: currentService)    
+        }
+        
     }
+    
+
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
