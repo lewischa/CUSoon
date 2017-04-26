@@ -23,21 +23,6 @@ class FavoritesTableViewController: UITableViewController {
         
         configureColors()
         addNewFavoriteButton()
-        
-//        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
-//        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
-//        navigationController?.navigationBar.barTintColor = backgroundColor
-        
-        //Gray background
-//        view.backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     
@@ -94,25 +79,73 @@ class FavoritesTableViewController: UITableViewController {
         return cell
     }
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        let cancelAction = UITableViewRowAction(style: .normal, title: "Cancel", handler: {(UITableViewRowAction, IndexPath) in
+//            self.tableView.setEditing(false, animated: true)
+//        })
+//        cancelAction.backgroundColor = UIColor.blue
+//        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: {(UITableViewRowAction, IndexPath) in
+//            let alert = UIAlertController(title: "Delete Service", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
+//                self.tableView.setEditing(false, animated: true)
+//            })
+//            let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {(action) in
+//                self.accessor.delete(service: self.serviceFavorites[indexPath.row])
+//                self.serviceFavorites.remove(at: indexPath.row)
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            })
+//            alert.addAction(cancelAction)
+//            alert.addAction(deleteAction)
+//            
+//            //            self.view.alpha = 0.5
+//            //            let subview = alert.view.subviews.first! as UIView
+//            //            let subview2 = subview.subviews.first! as UIView
+//            //            let alertContentView = subview2.subviews.first! as UIView
+//            //            subview2.backgroundColor = colors.background
+//            //            alertContentView.backgroundColor = colors.background
+//            self.present(alert, animated: true, completion: nil)
+//        })
+//        return [cancelAction, deleteAction]
+//    }
+ 
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            let alert = UIAlertController(title: "Delete Service", message: "Are you sure?", preferredStyle: UIAlertControllerStyle.alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action) in
+                self.tableView.setEditing(false, animated: true)
+            })
+            let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: {(action) in
+                self.accessor.delete(service: self.serviceFavorites[indexPath.row])
+                self.serviceFavorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            })
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            
+//            self.view.alpha = 0.5
+//            let subview = alert.view.subviews.first! as UIView
+//            let subview2 = subview.subviews.first! as UIView
+//            let alertContentView = subview2.subviews.first! as UIView
+//            subview2.backgroundColor = colors.background
+//            alertContentView.backgroundColor = colors.background
+            self.present(alert, animated: true, completion: nil)
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.
@@ -129,14 +162,27 @@ class FavoritesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "addFavoriteSegue" {
+            let newServiceVC = segue.destination as! NewServiceTypeRangeViewController
+            let addingService = ServiceModel()
+            addingService.addingFromFavorites = true
+            newServiceVC.useServiceModel(addingService)
+        }
+        
+        if segue.identifier == "useFavoriteSegue" {
+            let cell = sender as! FavoritesTableViewCell
+            if let idx = tableView.indexPath(for: cell) {
+                let confirmVC = segue.destination as! ConfirmServiceViewController
+                confirmVC.useServiceModel(serviceModel: serviceFavorites[idx.row])
+            }
+        }
     }
-    */
-
 }

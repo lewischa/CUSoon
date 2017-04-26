@@ -359,6 +359,7 @@
                                     <outlet property="contact" destination="5jz-8z-gJB" id="1Hv-Sl-foV"/>
                                     <outlet property="favoriteTitle" destination="k04-Ww-5gj" id="4aD-p6-9aD"/>
                                     <outlet property="serviceImage" destination="MOB-vf-sBL" id="IHQ-C1-93D"/>
+                                    <segue destination="Gqw-4E-OLp" kind="show" identifier="useFavoriteSegue" id="9FH-Oe-qxn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -368,7 +369,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="dfi-pp-eXh" kind="show" identifier="addFavoriteSegue" id="CS6-QC-1Mm"/>
+                        <segue destination="J26-wr-MVv" kind="show" identifier="addFavoriteSegue" id="ajG-jd-I3C"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xd-l2-FJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -939,7 +940,33 @@
         <image name="nextbutton" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="QVC-Fi-uKq"/>
         <segue reference="JQW-JC-vZU"/>
+=======
+        <segue reference="Nsg-9W-NLl"/>
+        <segue reference="ajG-jd-I3C"/>
+        <segue reference="9FH-Oe-qxn"/>
+>>>>>>> master
+=======
+
+        <segue reference="QVC-Fi-uKq"/>
+        <segue reference="JQW-JC-vZU"/>
+=======
+
+        <segue reference="QVC-Fi-uKq"/>
+        <segue reference="JQW-JC-vZU"/>
+>>>>>>> master
+
+        <segue reference="Nsg-9W-NLl"/>
+        <segue reference="ajG-jd-I3C"/>
+        <segue reference="9FH-Oe-qxn"/>
+
+<<<<<<< HEAD
+>>>>>>> master
+=======
+>>>>>>> master
     </inferredMetricsTieBreakers>
 </document>
