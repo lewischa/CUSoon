@@ -13,9 +13,14 @@ import CoreLocation
 class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var timeToDest: UILabel!
+    @IBOutlet weak var distToDest: UILabel!
+    @IBOutlet weak var serviceTitle: UILabel!
+    
     let colors = Colors()
     //var currLocation:CLLocation = CLLocation()
     var lManager = CLLocationManager()
+    var currentServive = ServiceModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,10 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.distanceFilter = 5
         lManager.requestWhenInUseAuthorization()
         lManager.startUpdatingLocation()
+        
+        //set variables
+        //timeToDest.text = currentServive
+        serviceTitle.text = currentServive.title
         
         
         //Initialize map
@@ -125,6 +134,10 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         navigationController?.navigationBar.barTintColor = backgroundColor
         view.backgroundColor = backgroundColor
         
+    }
+    
+    func setServiceForSegue(service: ServiceModel) {
+        currentServive = service
     }
 
     /*

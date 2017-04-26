@@ -43,7 +43,6 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     let contactStore = CNContactStore.init()
     var contact: CNContact? = nil
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
