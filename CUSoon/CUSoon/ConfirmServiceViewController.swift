@@ -14,6 +14,7 @@ class ConfirmServiceViewController: UIViewController {
     
     var service: ServiceModel? = nil
     let colors = Colors()
+    let accessor = DatabaseAccessor()
 
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var serviceType: UILabel!
@@ -22,6 +23,9 @@ class ConfirmServiceViewController: UIViewController {
     @IBOutlet weak var contact: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var addToFavorites: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +49,13 @@ class ConfirmServiceViewController: UIViewController {
         
         //Set remaining labels
         setLabels()
+        if service?.addingFromFavorites == true || service?.isFavorite == true {
+            addToFavorites.isEnabled = false
+            addToFavorites.alpha = 0
+        } else {
+            addToFavorites.isEnabled = true
+            addToFavorites.alpha = 1
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,6 +109,18 @@ class ConfirmServiceViewController: UIViewController {
         
     }
     
+    @IBAction func addServiceToFavorites(_ sender: Any) {
+        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+            self.service?.saveToFavorites()
+            self.addToFavorites.isEnabled = false
+            self.addToFavorites.alpha = 0.5
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Save Service", message: "Save \(service!.title!) to favorites?", preferredStyle: .alert)
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
