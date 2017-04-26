@@ -23,6 +23,8 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
     @IBOutlet weak var contactLabel: UILabel!
     @IBOutlet weak var contactImage: UIImageView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,10 +77,10 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
             self.stackView.subviews.forEach({$0.removeFromSuperview()})
             self.contact = contact
             self.loadData()
+            
         }
         
     }
-    
     
     func loadData(){
         
