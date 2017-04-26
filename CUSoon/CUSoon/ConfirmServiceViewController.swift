@@ -22,6 +22,9 @@ class ConfirmServiceViewController: UIViewController {
     @IBOutlet weak var contact: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var phone: UILabel!
+    @IBOutlet weak var addToFavorites: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,8 +48,15 @@ class ConfirmServiceViewController: UIViewController {
         
         //Set remaining labels
         setLabels()
+        if service?.addingFromFavorites == true || service?.isFavorite == true {
+            addToFavorites.isEnabled = false
+            addToFavorites.alpha = 0
+        } else {
+            addToFavorites.isEnabled = true
+            addToFavorites.alpha = 1
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -98,15 +108,27 @@ class ConfirmServiceViewController: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func addServiceToFavorites(_ sender: Any) {
+        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+            self.service?.saveToFavorites()
+            self.addToFavorites.isEnabled = false
+            self.addToFavorites.alpha = 0.5
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Save Service", message: "Save \(service!.title!) to favorites?", preferredStyle: .alert)
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
