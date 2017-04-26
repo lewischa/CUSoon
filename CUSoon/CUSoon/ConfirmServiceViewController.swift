@@ -25,6 +25,12 @@ class ConfirmServiceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for sView in view.subviews{
+            for v in sView.subviews{
+                v.backgroundColor = colors.background
+            }
+        }
+        
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
         view.backgroundColor = colors.background
         
