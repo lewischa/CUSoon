@@ -32,14 +32,12 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         // MARK: - Delete All
 //        accessor.dropTable()
-        
         initializeDatabase()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
 //        if accessor.isServiceRunning() {
 //            activateStatusButton()
 //            deactivateNewAndFavoritesButtons()

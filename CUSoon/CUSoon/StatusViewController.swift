@@ -17,10 +17,10 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     @IBOutlet weak var distToDest: UILabel!
     @IBOutlet weak var serviceTitle: UILabel!
     
+    var route = MKRoute()
     let colors = Colors()
-    //var currLocation:CLLocation = CLLocation()
     var lManager = CLLocationManager()
-    var currentServive = ServiceModel()
+    var currentService = ServiceModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,19 +32,13 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.distanceFilter = 5
         lManager.requestWhenInUseAuthorization()
         lManager.startUpdatingLocation()
-        
-        //set variables
-        //timeToDest.text = currentServive
-        serviceTitle.text = currentServive.title
-        
-        
-        //Initialize map
+
+        serviceTitle.text = currentService.title
+
         let span = MKCoordinateSpanMake(0.32, 0.32)
         let region = MKCoordinateRegionMake((lManager.location?.coordinate)!, span)
         mapView.showsUserLocation = true
         mapView.setRegion(region, animated: true)
-//        let currentLocation = CLLocation(latitude: 37.780085, longitude: -122.433824)
-       // drawRoute(currentLocation: currentLocation)
         
         
         lManager.stopUpdatingLocation()
@@ -61,7 +55,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func drawRoute(currentLocation: CLLocation){
         let sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
-        let destinationLocation = CLLocationCoordinate2D(latitude: 38.338041, longitude: -122.675358)
+        let destinationLocation = CLLocationCoordinate2D(latitude: currentService.destination.latitude, longitude: currentService.destination.longitude)
         
         let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
         let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
@@ -102,13 +96,36 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 return
             }
             
-            let route = response.routes[0]
-            self.mapView.add((route.polyline), level: MKOverlayLevel.aboveRoads)
+            self.route = response.routes[0]
+            self.mapView.add((self.route.polyline), level: MKOverlayLevel.aboveRoads)
             
-//            let rect = route.polyline.boundingMapRect
+            //set dist label
+            let distanceInMeters = self.route.distance
+            let distanceInMiles = String((distanceInMeters / 1609.344).roundTo(places: 2))
+            let distLabel = "\(distanceInMiles) mile(s)"
+            self.distToDest.text = distLabel
             
-            let testRectSize: MKMapSize = MKMapSize(width: route.polyline.boundingMapRect.size.width * 1.06, height: route.polyline.boundingMapRect.size.height * 1.06)
-            let testRect = MKMapRect(origin: route.polyline.boundingMapRect.origin, size: testRectSize)
+            let timeInSeconds = self.route.expectedTravelTime
+            if timeInSeconds < 59.0 {
+                let timeString = String(timeInSeconds)
+                let timeLabel = "\(timeString) second(s)"
+                self.timeToDest.text = timeLabel
+            } else {
+                let timeInMin = round((timeInSeconds/60.0))
+                if timeInMin >= 60.0 {
+                    let minutes = Int(timeInMin.truncatingRemainder(dividingBy: 60))
+                    let hours = Int(timeInMin/60)
+                    let timeLabel = "\(hours) hour(s) \(minutes) minute(s)"
+                    self.timeToDest.text = timeLabel
+                } else {
+                    let timeLabel = "\(timeInMin) minutes"
+                    self.timeToDest.text = timeLabel
+                }
+            }
+            
+            
+            let testRectSize: MKMapSize = MKMapSize(width: self.route.polyline.boundingMapRect.size.width * 1.06, height: self.route.polyline.boundingMapRect.size.height * 1.06)
+            let testRect = MKMapRect(origin: self.route.polyline.boundingMapRect.origin, size: testRectSize)
             
             self.mapView.setRegion(MKCoordinateRegionForMapRect(testRect), animated: true)
         }
@@ -137,7 +154,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     
     func setServiceForSegue(service: ServiceModel) {
-        currentServive = service
+        currentService = service
     }
 
     /*
