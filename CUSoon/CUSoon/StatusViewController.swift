@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import UserNotifications
 
 class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -36,6 +37,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = (self as! UNUserNotificationCenterDelegate)
         mapView.delegate = self
         cancel.isEnabled = true
         self.cancel.alpha = 1.0
@@ -72,8 +74,6 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     
     func checkForCompletion(distanceInMiles: Double) {
-        print(distanceInMiles)
-        print(currentService.range)
         if (distanceInMiles <= currentService.range) {
             serviceHandler.fire()
             cancel.isEnabled = false
@@ -205,4 +205,15 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     */
 
+}
+
+
+extension StatusViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
 }

@@ -17,7 +17,6 @@
 		0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */; };
 		0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADD91EAC34EC0032F255 /* SMSModel.swift */; };
 		0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */; };
-		0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */; };
 		0CABD0B51EAFE60200EBD813 /* piano_beat_mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */; };
 		0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */; };
 		0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */; };
@@ -73,7 +72,6 @@
 		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
 		0C87ADD91EAC34EC0032F255 /* SMSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSModel.swift; sourceTree = "<group>"; };
 		0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSHandler.swift; sourceTree = "<group>"; };
-		0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSMSViewController.swift; sourceTree = "<group>"; };
 		0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano_beat_mix.wav; sourceTree = "<group>"; };
 		0CB6EEDA1E9EECD500FFCDBE /* CUSoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUSoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */,
-				0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */,
 				0C87ADD91EAC34EC0032F255 /* SMSModel.swift */,
 				0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */,
 				0CB6EEDC1E9EECD500FFCDBE /* CUSoon */,
@@ -393,7 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */,
 				3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */,
 				42CAE5681EABEC30007051E7 /* ContactDetailsViewController.swift in Sources */,
 				423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */,

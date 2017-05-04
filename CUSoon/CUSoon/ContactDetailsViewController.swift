@@ -34,6 +34,50 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
         edit.layer.cornerRadius = edit.frame.width/2
         contactsButton.layer.cornerRadius = edit.frame.width/2
         loadData()
+        addCancelButton()
+    }
+    
+    func addCancelButton() {
+        let cancelLabel = UILabel()
+        let cancelButton = UIButton(type: .custom)
+        cancelLabel.text = "Cancel"
+        cancelLabel.font = UIFont(name: "Agency_FB", size: 25)
+        cancelLabel.textColor = colors.blueText
+        cancelLabel.textAlignment = .right
+        cancelLabel.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)! * 0.25, height: (self.navigationController?.navigationBar.frame.height)! * 0.65)
+        cancelButton.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)! * 0.25, height: (self.navigationController?.navigationBar.frame.height)! * 0.65)
+        //        cancelButton.addSubview(cancelLabel)
+        //        cancelLabel.layer.borderWidth = 1
+        cancelLabel.layer.borderColor = colors.blueText.cgColor
+        //        cancelLabel.layer.cornerRadius = 5
+        cancelButton.addSubview(cancelLabel)
+        cancelButton.addTarget(self, action: #selector(self.cancelButtonTarget), for: .touchUpInside)
+        let cancelBarButton = UIBarButtonItem(customView: cancelButton)
+        self.navigationItem.rightBarButtonItem = cancelBarButton
+        
+    }
+    
+    func cancelButtonTarget() {
+        var cancelMessage = String()
+        var viewControllers = [UIViewController]()
+        if service?.addingFromFavorites == true {
+            cancelMessage = "This will bring you back to favorites."
+            viewControllers.append((self.navigationController?.viewControllers[0])!)
+            viewControllers.append((self.navigationController?.viewControllers[1])!)
+        } else {
+            cancelMessage = "This will bring you back home."
+            viewControllers.append((self.navigationController?.viewControllers[0])!)
+        }
+        let alert = UIAlertController(title: "Are you sure?", message: cancelMessage, preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "I'm Sure", style: .destructive, handler: {(action) in
+            self.navigationController?.setViewControllers(viewControllers, animated: true)
+        })
+        let cancelAction = UIAlertAction(title: "Stay Here", style: .default, handler: nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

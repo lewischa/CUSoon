@@ -19,10 +19,10 @@ struct SMSHandler {
             request.httpMethod = "POST"
             request.httpBody = "From=\(fromNumber)&To=\(toNumber)&Body=\(sms.body())".data(using: String.Encoding.utf8)
             URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) in
-                print("Finished")
+//                print("Finished")
                 if let data = data, let responseDetails = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                     // Success
-                    print("Response: \(responseDetails)")
+//                    print("Response: \(responseDetails)")
                 } else {
                     // Failure
                     print("Error: \(String(describing: error))")

@@ -132,27 +132,27 @@ class ServiceModel: NSObject {
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {
             placemarks, error in
             var addressToReturn = ""
-            print(location)
+//            print(location)
             
             if let marks = placemarks {
                 if error == nil && marks.count > 0 {
                     if let streetNumber = marks[0].subThoroughfare {
-                        print("streetNumber: \(streetNumber)")
+//                        print("streetNumber: \(streetNumber)")
                         addressToReturn += streetNumber
                         addressToReturn += " "
                     }
                     if let street = marks[0].thoroughfare {
-                        print("street: \(street)")
+//                        print("street: \(street)")
                         addressToReturn += street
                     }
                     addressToReturn += ", "
                     if let city = marks[0].locality {
-                        print("city: \(city)")
+//                        print("city: \(city)")
                         addressToReturn += city
                         addressToReturn += " "
                     }
                     if let zip = marks[0].postalCode {
-                        print("zip: \(zip)")
+//                        print("zip: \(zip)")
                         addressToReturn += zip
                     }
                 }

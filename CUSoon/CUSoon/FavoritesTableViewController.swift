@@ -26,6 +26,14 @@ class FavoritesTableViewController: UITableViewController {
         addNewFavoriteButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        serviceFavorites = accessor.fetch()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     
     func configureColors() {
         let textColor = colors.titleOrage
@@ -53,7 +61,6 @@ class FavoritesTableViewController: UITableViewController {
     
     
     @IBAction func addNewFavorite(_ sender: Any) {
-        print("Add new favorite button tapped")
         self.performSegue(withIdentifier: "addFavoriteSegue", sender: sender)
     }
     

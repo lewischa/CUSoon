@@ -99,16 +99,32 @@ class ConfirmServiceViewController: UIViewController {
         cancelButton.addTarget(self, action: #selector(ConfirmServiceViewController.cancelButtonTarget), for: .touchUpInside)
         let cancelBarButton = UIBarButtonItem(customView: cancelButton)
         self.navigationItem.rightBarButtonItem = cancelBarButton
-        
+        self.navigationItem.rightBarButtonItem?.isEnabled = true
     }
     
     func cancelButtonTarget() {
+        var viewControllerToPopTo = UIViewController()
+        var cancelMessage = String()
         if service?.addingFromFavorites == true || service?.isFavorite == true {
-            let favoritesVC = self.navigationController?.viewControllers[1]
-            self.navigationController?.popToViewController(favoritesVC!, animated: true)
+            viewControllerToPopTo = (self.navigationController?.viewControllers[1])!
+            cancelMessage = "This will bring you back to Favorites."
+//            self.navigationController?.popToViewController(favoritesVC!, animated: true)
         } else {
-            self.navigationController?.popToRootViewController(animated: true)
+//            self.navigationController?.popToRootViewController(animated: true)
+            viewControllerToPopTo = (self.navigationController?.viewControllers[0])!
+            cancelMessage = "This will bring you back home."
         }
+        
+        let alert = UIAlertController(title: "Are you sure?", message: cancelMessage, preferredStyle: .alert)
+        
+        let confirmAction = UIAlertAction(title: "I'm Sure", style: .destructive, handler: {(action) in
+            self.navigationController?.popToViewController(viewControllerToPopTo, animated: true)
+        })
+        let cancelAction = UIAlertAction(title: "Stay Here", style: .default, handler: nil)
+        
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -116,14 +132,29 @@ class ConfirmServiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func disableCancelButton() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
+        let cancelButton = UIButton()
+        cancelButton.frame = CGRect(x: 0, y: 0, width: (self.navigationController?.navigationBar.frame.width)! * 0.25, height: (self.navigationController?.navigationBar.frame.height)! * 0.65)
+        cancelButton.backgroundColor = self.colors.background
+        let barButton = UIBarButtonItem(customView: cancelButton)
+        self.navigationItem.rightBarButtonItem = barButton
+    }
+    
     @IBAction func confirmServiceButtonClick(_ sender: UIButton) {
         if !isConfirmToStatusButton {
+            let alert = UIAlertController(title: "Save Service", message: "Enter a title to save or use the service.", preferredStyle: .alert)
             let saveAndUseAction = UIAlertAction(title: "Save & Use", style: .default, handler: {(action) in
+                let titleTextField = alert.textFields![0] as UITextField
+                self.service?.title = titleTextField.text
                 self.service?.saveToFavorites()
                 self.isConfirmToStatusButton = true
                 self.performSegue(withIdentifier: "confirmToStatusSegue", sender: nil)
             })
             let saveOnlyAction = UIAlertAction(title: "Save Only", style: .default, handler: {(action) in
+                self.disableCancelButton()
+                let titleTextField = alert.textFields![0] as UITextField
+                self.service?.title = titleTextField.text
                 self.service?.saveToFavorites()
                 self.isConfirmToStatusButton = true
 //                self.navigationItem.backBarButtonItem?.title = "Home"
@@ -143,15 +174,35 @@ class ConfirmServiceViewController: UIViewController {
                 })
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            let alert = UIAlertController(title: "Save Service", message: "Save and use, or save only?", preferredStyle: .alert)
+            
+            alert.addTextField(configurationHandler: {(textField) in
+                textField.addTarget(self, action: #selector(self.titleTextChangedSavingFromFavorites(_:)), for: .editingChanged)
+            })
+            
             alert.addAction(saveAndUseAction)
             alert.addAction(saveOnlyAction)
+            alert.actions[0].isEnabled = false
+            alert.actions[1].isEnabled = false
             alert.addAction(cancelAction)
             self.present(alert, animated: true, completion: nil)
         } else {
             self.performSegue(withIdentifier: "confirmToStatusSegue", sender: nil)
         }
     }
+    
+    func titleTextChangedSavingFromFavorites(_ sender: Any) {
+        let textField = sender as! UITextField
+        var responder: UIResponder! = textField
+        while !(responder is UIAlertController) {
+            responder = responder.next
+        }
+        let alert = responder as! UIAlertController
+        alert.actions[0].isEnabled = (textField.text != "")
+        alert.actions[1].isEnabled = (textField.text != "")
+    }
+    
+    
+    
     func setLabels(){
         //Retrieve address for given coordinates
         service?.reverseGeocode(completion: {
@@ -200,16 +251,39 @@ class ConfirmServiceViewController: UIViewController {
     
     
     @IBAction func addServiceToFavorites(_ sender: Any) {
-        let saveAction = UIAlertAction(title: "Ok", style: .default, handler: {(action) in
+        let alert = UIAlertController(title: "Save Service", message: "Enter a title to save to Favorites", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default, handler: {(action) in
+            self.disableCancelButton()
+            let titleTextField = alert.textFields![0] as UITextField
+            self.service?.title = titleTextField.text
             self.service?.saveToFavorites()
             self.addToFavorites.isEnabled = false
             self.addToFavorites.alpha = 0.5
+            var viewControllers = [UIViewController]()
+            viewControllers.append((self.navigationController?.viewControllers.first)!)
+            viewControllers.append((self.navigationController?.viewControllers.last)!)
+            self.navigationController?.setViewControllers(viewControllers, animated: true)
+//            self.navigationItem.backBarButtonItem?.title = "Home"
         })
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        let alert = UIAlertController(title: "Save Service", message: "Save \(service!.title!) to favorites?", preferredStyle: .alert)
+        
+        alert.addTextField(configurationHandler: {(textField) in
+            textField.addTarget(self, action: #selector(self.titleTextChangedSavingNewService(_:)), for: .editingChanged)
+        })
         alert.addAction(saveAction)
+        alert.actions[0].isEnabled = false
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func titleTextChangedSavingNewService(_ sender: Any) {
+        let textField = sender as! UITextField
+        var responder: UIResponder! = textField
+        while !(responder is UIAlertController) {
+            responder = responder.next
+        }
+        let alert = responder as! UIAlertController
+        alert.actions[0].isEnabled = (textField.text != "")
     }
     
     /*
