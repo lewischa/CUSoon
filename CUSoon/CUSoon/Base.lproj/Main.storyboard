@@ -550,7 +550,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqq-9T-zmH">
                                                 <rect key="frame" x="175" y="10.666666666666686" width="64.666666666666657" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
-                                                <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.99929803610000001" green="0.67094922069999996" blue="0.28936362269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -697,7 +697,7 @@
                                                     <constraint firstAttribute="height" constant="90" id="g1x-zQ-GlR"/>
                                                     <constraint firstAttribute="width" constant="90" id="qc2-AC-tec"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="nextbutton"/>
+                                                <state key="normal" image="nextbutton"/>
                                                 <connections>
                                                     <action selector="confirmServiceButtonClick:" destination="Gqw-4E-OLp" eventType="touchUpInside" id="pyJ-7d-sIn"/>
                                                 </connections>
@@ -781,6 +781,7 @@
                     <connections>
                         <outlet property="addToFavorites" destination="m2m-BE-Ag4" id="J0r-ko-U7o"/>
                         <outlet property="address" destination="GyJ-PU-l8b" id="TU3-32-yiq"/>
+                        <outlet property="confirmButton" destination="qOH-Cw-Lj5" id="tMl-9x-f4e"/>
                         <outlet property="contact" destination="6uD-Pa-jmJ" id="rsc-S5-RrG"/>
                         <outlet property="contactName" destination="Dnt-1T-Q7d" id="3kl-Ds-Rta"/>
                         <outlet property="phone" destination="nAD-cC-R5O" id="glK-P7-j4S"/>
