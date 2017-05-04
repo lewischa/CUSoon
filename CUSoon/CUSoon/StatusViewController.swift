@@ -17,15 +17,31 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     @IBOutlet weak var distToDest: UILabel!
     @IBOutlet weak var serviceTitle: UILabel!
     
+    @IBOutlet weak var cancel: UIButton!
+    @IBAction func cancelButton(_ sender: Any) {
+        lManager.stopUpdatingLocation()
+        navigationItem.setHidesBackButton(false, animated: true)
+        cancel.isEnabled = false
+        UIView.animate(withDuration: 0.5, animations:  {
+            self.cancel.alpha = 0.5
+        })
+    }
+    
     var route = MKRoute()
     let colors = Colors()
     var lManager = CLLocationManager()
     var currentService = ServiceModel()
+    var serviceHandler = ServiceHandler()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         mapView.delegate = self
-        
+        cancel.isEnabled = true
+        self.cancel.alpha = 1.0
+        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.backBarButtonItem?.title = "home"
+        navigationController?.viewControllers = [(navigationController?.viewControllers.first)!, (navigationController?.viewControllers.last)!]
         // Set Location manager
         lManager.delegate = self
         lManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -33,7 +49,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.requestWhenInUseAuthorization()
         lManager.startUpdatingLocation()
 
-        serviceTitle.text = currentService.title
+        serviceTitle.text = currentService.address
 
         let span = MKCoordinateSpanMake(0.32, 0.32)
         let region = MKCoordinateRegionMake((lManager.location?.coordinate)!, span)
@@ -41,7 +57,6 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         mapView.setRegion(region, animated: true)
         
         
-        lManager.stopUpdatingLocation()
         configureColors()
         // Do any additional setup after loading the view.
     }
@@ -49,9 +64,28 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
+        
         drawRoute(currentLocation: userLocation)
+
         
     }
+    
+    
+    func checkForCompletion(distanceInMiles: Double) {
+        print(distanceInMiles)
+        print(currentService.range)
+        if (distanceInMiles <= currentService.range) {
+            serviceHandler.fire()
+            cancel.isEnabled = false
+            UIView.animate(withDuration: 0.5, animations:  {
+                self.cancel.alpha = 0.5
+            })
+            lManager.stopUpdatingLocation()
+            navigationItem.setHidesBackButton(false, animated: true)
+        }
+    }
+    
+    
     
     func drawRoute(currentLocation: CLLocation){
         let sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
@@ -97,11 +131,13 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             }
             
             self.route = response.routes[0]
+            self.mapView.removeOverlays(self.mapView.overlays)
             self.mapView.add((self.route.polyline), level: MKOverlayLevel.aboveRoads)
             
             //set dist label
             let distanceInMeters = self.route.distance
-            let distanceInMiles = String((distanceInMeters / 1609.344).roundTo(places: 2))
+            let distanceInMilesDouble = (distanceInMeters / 1609.344).roundTo(places: 2)
+            let distanceInMiles = String(distanceInMilesDouble)
             let distLabel = "\(distanceInMiles) mile(s)"
             self.distToDest.text = distLabel
             
@@ -121,6 +157,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let timeLabel = "\(timeInMin) minutes"
                     self.timeToDest.text = timeLabel
                 }
+                self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             }
             
             
@@ -155,6 +192,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func setServiceForSegue(service: ServiceModel) {
         currentService = service
+        serviceHandler = ServiceHandler(currentService)
     }
 
     /*
