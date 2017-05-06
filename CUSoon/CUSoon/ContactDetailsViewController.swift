@@ -27,7 +27,6 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = colors.background
         contactImage.backgroundColor = colors.background
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
@@ -110,21 +109,21 @@ class ContactDetailsViewController: UIViewController, CNContactPickerDelegate, C
         contactInfo.allowsEditing = true
         contactInfo.allowsActions = false
         contactInfo.delegate = self
-        
+//        contactInfo.present(self, animated: true, completion: {self.loadData()})
         self.navigationController?.pushViewController(contactInfo, animated: true)
     }
     
     func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
         
         //Only the case if the contact information has been edited, allow changes to happen to parent view controller
-        if contact != nil{
+        if contact != nil && contact != self.contact{
             self.stackView.subviews.forEach({$0.removeFromSuperview()})
             self.contact = contact
             self.loadData()
-            
         }
         
     }
+    
     
     func loadData(){
         

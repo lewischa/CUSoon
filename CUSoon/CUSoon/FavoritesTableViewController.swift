@@ -46,7 +46,7 @@ class FavoritesTableViewController: UITableViewController {
     
     func addNewFavoriteButton() {
         let addButton = UIButton(type: .custom)
-        addButton.setImage(#imageLiteral(resourceName: "alarm_text_icon_save"), for: .normal)
+        addButton.setImage(#imageLiteral(resourceName: "add"), for: .normal)
         let navBarHeight: CGFloat = self.navigationController!.navigationBar.frame.height * 0.75
         addButton.frame = CGRect(x: 0, y: 0, width: navBarHeight, height: navBarHeight)
         addButton.addTarget(self, action: #selector(FavoritesTableViewController.addNewFavorite(_:)), for: .touchUpInside)
