@@ -33,6 +33,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     var lManager = CLLocationManager()
     var currentService = ServiceModel()
     var serviceHandler = ServiceHandler()
+    var annotationSet = false
     
     override func viewDidLoad() {
         
@@ -46,10 +47,12 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         navigationController?.viewControllers = [(navigationController?.viewControllers.first)!, (navigationController?.viewControllers.last)!]
         // Set Location manager
         lManager.delegate = self
-        lManager.desiredAccuracy = kCLLocationAccuracyBest
+        lManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         lManager.distanceFilter = 5
-        lManager.requestWhenInUseAuthorization()
+        lManager.requestAlwaysAuthorization()
+        lManager.allowsBackgroundLocationUpdates = true
         lManager.startUpdatingLocation()
+        
 
         //serviceTitle.text = currentService.address
         currentService.reverseGeocode(completion: {
@@ -63,28 +66,27 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         
         
         configureColors()
-        // Do any additional setup after loading the view.
     }
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
-        
-        drawRoute(currentLocation: userLocation)
-
-        
+        print(userLocation)
+        self.drawRoute(currentLocation: userLocation)
     }
     
     
     func checkForCompletion(distanceInMiles: Double) {
         if (distanceInMiles <= currentService.range) {
             serviceHandler.fire()
-            cancel.isEnabled = false
-            UIView.animate(withDuration: 0.5, animations:  {
-                self.cancel.alpha = 0.5
-            })
-            lManager.stopUpdatingLocation()
-            navigationItem.setHidesBackButton(false, animated: true)
+            DispatchQueue.main.async {
+                self.cancel.isEnabled = false
+                UIView.animate(withDuration: 0.5, animations:  {
+                    self.cancel.alpha = 0.5
+                })
+                self.lManager.stopUpdatingLocation()
+                self.navigationItem.setHidesBackButton(false, animated: true)
+            }
         }
     }
     
@@ -112,7 +114,10 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             destinationAnnotation.coordinate = location.coordinate
         }
         
-        self.mapView.showAnnotations([destinationAnnotation], animated: true )
+        if !self.annotationSet{
+            self.mapView.showAnnotations([destinationAnnotation], animated: true )
+            self.annotationSet = true
+        }
         
         let directionRequest = MKDirectionsRequest()
         directionRequest.source = sourceMapItem
@@ -164,16 +169,18 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             }
             self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             
-            let testRectSize: MKMapSize = MKMapSize(width: self.route.polyline.boundingMapRect.size.width * 1.06, height: self.route.polyline.boundingMapRect.size.height * 1.06)
+            
+            let testRectSize: MKMapSize = MKMapSize(width: self.route.polyline.boundingMapRect.size.width * 1.5, height: self.route.polyline.boundingMapRect.size.height * 1.5)
             let testRect = MKMapRect(origin: self.route.polyline.boundingMapRect.origin, size: testRectSize)
             
             self.mapView.setRegion(MKCoordinateRegionForMapRect(testRect), animated: true)
+            
         }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = colors.titleOrage
+        renderer.strokeColor = colors.blueText
         renderer.lineWidth = 4.0
         
         return renderer
