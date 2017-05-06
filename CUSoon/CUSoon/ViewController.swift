@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var newServiceButton: UIButton!
     @IBOutlet weak var newServiceLabel: UILabel!
     @IBOutlet weak var favoritesButton: UIButton!
-    @IBOutlet weak var favoritesLabel: UILabel!
     @IBOutlet weak var statusButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var favoritesLabel: UILabel!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     var currentService = ServiceModel(lat: 38.472681, long: -122.760275, _range: 5.0, sType: 0, _title: "Test1", msg: "msg1", _phone: "7072922477", _name: "Chad1")
 
     override func viewDidLoad() {
@@ -28,6 +30,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let backgroundColor = colors.background
         view.backgroundColor = backgroundColor
+        topView.backgroundColor = colors.background
+        bottomView.backgroundColor = colors.background
         navigationController?.navigationBar.barTintColor = backgroundColor
         navigationController?.navigationBar.isTranslucent = false
         // MARK: - Delete All
