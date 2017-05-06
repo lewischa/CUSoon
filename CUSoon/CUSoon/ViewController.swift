@@ -79,46 +79,6 @@ class ViewController: UIViewController {
     
     func initializeDatabase() {
         accessor.insertServiceRunning()
-        
-        /*
-         Set up initial database entries
-         */
-        let serv1 = ServiceModel(lat: 38.472681, long: -122.760275, _range: 5.0, sType: 0, _title: "Test1", msg: "msg1", _phone: "7072922477", _name: "Chad1")
-        let serv2 = ServiceModel(lat: 38.338003, long: -122.673809, _range: 5.0, sType: 1, _title: "Test2", msg: "msg2", _phone: "7072922477", _name: "SSU1")
-        let serv3 = ServiceModel(lat: 37.787573, long: -122.437249, _range: 10.0, sType: 1, _title: "Test3", msg: "msg3", _phone: "7072922477", _name: "SF1")
-        
-
-        /*
-         Insert entities into database
-         */
-        serv1.saveToFavorites()
-        serv2.saveToFavorites()
-        serv3.saveToFavorites()
-//        accessor.save(service: serv1)
-//        accessor.save(service: serv2)
-//        accessor.save(service: serv3)
-        
-        /*
-         Fetch all from database
-         */
-        
-        
-        var services: [ServiceModel]
-        services = accessor.fetch()
-        /*
-         Print all
-         */
-        for service in services {
-            service.printService()
-        }
-        
-        /*
-         serv4 used for update and delete testing
-         */
-        let serv4 = ServiceModel(lat: 1.787573, long: -122.437249, _range: 10.0, sType: 1, _title: "Test3", msg: "msg3", _phone: "7777777777", _name: "SF100000000000")
-        
-        updateTest(old1: serv3, new1: serv4)
-        deleteTest(toDelete: serv4)
     }
 
     
@@ -205,15 +165,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func serviceFavoritesOnClick(_ sender: Any) {
-        print("serviceFavorites click")
+//        print("serviceFavorites click")
     }
     @IBAction func serviceUpdatesOnClick(_ sender: Any) {
-        print("serviceUpdates click")
+//        print("serviceUpdates click")
         //temporarily change availability when clicked
     }
 
     @IBAction func newServiceOnClick(_ sender: Any) {
-        print("newService click")
+//        print("newService click")
     }
 
 }

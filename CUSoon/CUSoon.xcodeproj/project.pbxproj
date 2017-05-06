@@ -17,7 +17,6 @@
 		0C6F229E1EAD816300C94CE3 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */; };
 		0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADD91EAC34EC0032F255 /* SMSModel.swift */; };
 		0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */; };
-		0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */; };
 		0CABD0B51EAFE60200EBD813 /* piano_beat_mix.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */; };
 		0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */; };
 		0CB6EEE01E9EECD500FFCDBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */; };
@@ -70,10 +69,9 @@
 		0C22120F1EA7293E00AAA473 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0C6F22941EAD620500C94CE3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0C6F229B1EAD709400C94CE3 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
-		0C87ADD91EAC34EC0032F255 /* SMSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSModel.swift; sourceTree = "<group>"; };
-		0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMSHandler.swift; sourceTree = "<group>"; };
-		0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSMSViewController.swift; sourceTree = "<group>"; };
+		0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServiceHandler.swift; path = ../ServiceHandler.swift; sourceTree = "<group>"; };
+		0C87ADD91EAC34EC0032F255 /* SMSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMSModel.swift; path = ../SMSModel.swift; sourceTree = "<group>"; };
+		0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMSHandler.swift; path = ../SMSHandler.swift; sourceTree = "<group>"; };
 		0CABD0B41EAFE60200EBD813 /* piano_beat_mix.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano_beat_mix.wav; sourceTree = "<group>"; };
 		0CB6EEDA1E9EECD500FFCDBE /* CUSoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CUSoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +136,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C409F571EBBCC1200D5D545 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */,
+				42CAE5671EABEC30007051E7 /* ContactDetailsViewController.swift */,
+				42CAE5651EABC52E007051E7 /* ConfirmServiceViewController.swift */,
+				423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */,
+				3FD30A331EA5925B00B452D9 /* StatusViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0C409F581EBBCC2600D5D545 /* TableViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */,
+				423DAE7C1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift */,
+				423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */,
+			);
+			name = TableViewControllers;
+			sourceTree = "<group>";
+		};
+		0C409F591EBBCC5800D5D545 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C87ADD91EAC34EC0032F255 /* SMSModel.swift */,
+				0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0C409F5A1EBBCC6000D5D545 /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */,
+				0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */,
+			);
+			name = Handlers;
+			sourceTree = "<group>";
+		};
 		0C6F22981EAD662700C94CE3 /* AlarmSounds */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,10 +187,6 @@
 		0CB6EED11E9EECD400FFCDBE = {
 			isa = PBXGroup;
 			children = (
-				0C6F229D1EAD816300C94CE3 /* ServiceHandler.swift */,
-				0C87ADDF1EAC58D00032F255 /* TestSMSViewController.swift */,
-				0C87ADD91EAC34EC0032F255 /* SMSModel.swift */,
-				0C87ADDB1EAC3AA70032F255 /* SMSHandler.swift */,
 				0CB6EEDC1E9EECD500FFCDBE /* CUSoon */,
 				0CB6EEF41E9EECD500FFCDBE /* CUSoonTests */,
 				0CB6EEFF1E9EECD500FFCDBE /* CUSoonUITests */,
@@ -174,24 +208,19 @@
 		0CB6EEDC1E9EECD500FFCDBE /* CUSoon */ = {
 			isa = PBXGroup;
 			children = (
-				0C6F22981EAD662700C94CE3 /* AlarmSounds */,
 				0CB6EF1A1E9F06A700FFCDBE /* Database */,
-				0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */,
-				0CB6EEDF1E9EECD500FFCDBE /* ViewController.swift */,
-				423DAE701EA32EBD00EF1A33 /* FavoritesTableViewCell.swift */,
-				423DAE7C1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift */,
-				42CAE5671EABEC30007051E7 /* ContactDetailsViewController.swift */,
-				42CAE5651EABC52E007051E7 /* ConfirmServiceViewController.swift */,
-				423DAE6E1EA32EA900EF1A33 /* FavoritesTableViewController.swift */,
-				423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */,
+				0C409F571EBBCC1200D5D545 /* ViewControllers */,
+				0C409F581EBBCC2600D5D545 /* TableViewControllers */,
+				0C409F591EBBCC5800D5D545 /* Models */,
+				0C409F5A1EBBCC6000D5D545 /* Handlers */,
+				0C6F22981EAD662700C94CE3 /* AlarmSounds */,
+				423DAE721EA3E80E00EF1A33 /* CustomFonts */,
 				0CB6EEE11E9EECD500FFCDBE /* Main.storyboard */,
 				0CB6EEE71E9EECD500FFCDBE /* Assets.xcassets */,
 				0CB6EEE91E9EECD500FFCDBE /* LaunchScreen.storyboard */,
 				0CB6EEEC1E9EECD500FFCDBE /* Info.plist */,
-				423DAE721EA3E80E00EF1A33 /* CustomFonts */,
 				0CB6EEE41E9EECD500FFCDBE /* CUSoon.xcdatamodeld */,
-				0C0AC72B1E9F2AD400BEBD42 /* ServiceModel.swift */,
-				3FD30A331EA5925B00B452D9 /* StatusViewController.swift */,
+				0CB6EEDD1E9EECD500FFCDBE /* AppDelegate.swift */,
 			);
 			path = CUSoon;
 			sourceTree = "<group>";
@@ -319,7 +348,7 @@
 				TargetAttributes = {
 					0CB6EED91E9EECD400FFCDBE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JHF6RYCS32;
+						DevelopmentTeam = SW3782WXMN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -393,7 +422,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C87ADE01EAC58D00032F255 /* TestSMSViewController.swift in Sources */,
 				3FD30A341EA5925B00B452D9 /* StatusViewController.swift in Sources */,
 				42CAE5681EABEC30007051E7 /* ContactDetailsViewController.swift in Sources */,
 				423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */,
@@ -567,10 +595,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JHF6RYCS32;
+				DEVELOPMENT_TEAM = SW3782WXMN;
 				INFOPLIST_FILE = CUSoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon.brooke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -580,10 +608,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JHF6RYCS32;
+				DEVELOPMENT_TEAM = SW3782WXMN;
 				INFOPLIST_FILE = CUSoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon.brooke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

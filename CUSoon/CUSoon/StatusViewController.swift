@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import UserNotifications
 
 class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -17,15 +18,32 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     @IBOutlet weak var distToDest: UILabel!
     @IBOutlet weak var serviceTitle: UILabel!
     
+    @IBOutlet weak var cancel: UIButton!
+    @IBAction func cancelButton(_ sender: Any) {
+        lManager.stopUpdatingLocation()
+        navigationItem.setHidesBackButton(false, animated: true)
+        cancel.isEnabled = false
+        UIView.animate(withDuration: 0.5, animations:  {
+            self.cancel.alpha = 0.5
+        })
+    }
+    
     var route = MKRoute()
     let colors = Colors()
     var lManager = CLLocationManager()
     var currentService = ServiceModel()
+    var serviceHandler = ServiceHandler()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        mapView.delegate = self
         
+        super.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = (self as! UNUserNotificationCenterDelegate)
+        mapView.delegate = self
+        cancel.isEnabled = true
+        self.cancel.alpha = 1.0
+        navigationItem.setHidesBackButton(true, animated: true)
+        navigationItem.backBarButtonItem?.title = "home"
+        navigationController?.viewControllers = [(navigationController?.viewControllers.first)!, (navigationController?.viewControllers.last)!]
         // Set Location manager
         lManager.delegate = self
         lManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -33,15 +51,17 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.requestWhenInUseAuthorization()
         lManager.startUpdatingLocation()
 
-        serviceTitle.text = currentService.title
-
+        //serviceTitle.text = currentService.address
+        currentService.reverseGeocode(completion: {
+            (addressToUse) -> Void in
+            self.serviceTitle.text = addressToUse
+        })
         let span = MKCoordinateSpanMake(0.32, 0.32)
         let region = MKCoordinateRegionMake((lManager.location?.coordinate)!, span)
         mapView.showsUserLocation = true
         mapView.setRegion(region, animated: true)
         
         
-        lManager.stopUpdatingLocation()
         configureColors()
         // Do any additional setup after loading the view.
     }
@@ -49,9 +69,26 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
+        
         drawRoute(currentLocation: userLocation)
+
         
     }
+    
+    
+    func checkForCompletion(distanceInMiles: Double) {
+        if (distanceInMiles <= currentService.range) {
+            serviceHandler.fire()
+            cancel.isEnabled = false
+            UIView.animate(withDuration: 0.5, animations:  {
+                self.cancel.alpha = 0.5
+            })
+            lManager.stopUpdatingLocation()
+            navigationItem.setHidesBackButton(false, animated: true)
+        }
+    }
+    
+    
     
     func drawRoute(currentLocation: CLLocation){
         let sourceLocation = CLLocationCoordinate2D(latitude: currentLocation.coordinate.latitude, longitude: currentLocation.coordinate.longitude)
@@ -97,11 +134,13 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             }
             
             self.route = response.routes[0]
+            self.mapView.removeOverlays(self.mapView.overlays)
             self.mapView.add((self.route.polyline), level: MKOverlayLevel.aboveRoads)
             
             //set dist label
             let distanceInMeters = self.route.distance
-            let distanceInMiles = String((distanceInMeters / 1609.344).roundTo(places: 2))
+            let distanceInMilesDouble = (distanceInMeters / 1609.344).roundTo(places: 2)
+            let distanceInMiles = String(distanceInMilesDouble)
             let distLabel = "\(distanceInMiles) mile(s)"
             self.distToDest.text = distLabel
             
@@ -121,6 +160,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let timeLabel = "\(timeInMin) minutes"
                     self.timeToDest.text = timeLabel
                 }
+                self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             }
             
             
@@ -155,6 +195,8 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func setServiceForSegue(service: ServiceModel) {
         currentService = service
+        //serviceTitle.text = service.address
+        serviceHandler = ServiceHandler(currentService)
     }
 
     /*
@@ -167,4 +209,15 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     */
 
+}
+
+
+extension StatusViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
 }

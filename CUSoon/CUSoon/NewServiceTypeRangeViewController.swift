@@ -98,7 +98,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
     @IBAction func onNextClick(_ sender: Any) {
         //If nil, no data collected yet. Collect data for segue
         if service == nil{
-            print("service available")
+//            print("service available")
             service = ServiceModel(dest: (selectedPin?.coordinate)!, _range: range, sType: Int16(services.selectedSegmentIndex), _title: "", msg: "", _phone: "", _name: "")
         }
             //Data collected, but user came back and made possible changes, update info
@@ -108,7 +108,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
             service?.service_type = Int16(services.selectedSegmentIndex)
         }
         
-        print(services.selectedSegmentIndex)
+//        print(services.selectedSegmentIndex)
         // If set to anything other than alarm service, collect contact info
         if services.selectedSegmentIndex > 0{
             let entity = CNEntityType.contacts
@@ -172,7 +172,7 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
             range = Double(slider.value.rounded())
         }
         rangeLabel.text = String(range) + " miles"
-        print("range:\(range)")
+//        print("range:\(range)")
     }
     
     override func becomeFirstResponder() -> Bool {
@@ -189,7 +189,8 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         self.searchController.searchBar.delegate = self
-        
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.tintColor = colors.blueText
         
         present(searchController, animated: true, completion: nil)
     }

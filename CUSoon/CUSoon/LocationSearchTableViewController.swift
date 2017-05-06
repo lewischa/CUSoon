@@ -40,7 +40,7 @@ class LocationSearchTableViewController: UITableViewController, UISearchResultsU
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print("matchingItem.count: \(matchingItem.count)")
+//        print("matchingItem.count: \(matchingItem.count)")
         return matchingItem.count
     }
     
@@ -48,7 +48,7 @@ class LocationSearchTableViewController: UITableViewController, UISearchResultsU
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("In update table view")
+//        print("In update table view")
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedItem = matchingItem[indexPath.row].placemark
         cell.textLabel?.text = selectedItem.name
@@ -81,8 +81,8 @@ class LocationSearchTableViewController: UITableViewController, UISearchResultsU
                 return
             }
             self.matchingItem = response.mapItems
-            print(self.matchingItem.count)
-            print(self.matchingItem[0])
+//            print(self.matchingItem.count)
+//            print(self.matchingItem[0])
             self.tableView.reloadData()
         }
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mp2-Gc-2aX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Mp2-Gc-2aX">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -47,8 +47,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdj-KP-A1v">
-                                <rect key="frame" x="162" y="323" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdj-KP-A1v">
+                                <rect key="frame" x="162" y="460" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="Rcs-T0-7R1"/>
                                     <constraint firstAttribute="height" constant="90" id="un0-QC-092"/>
@@ -59,32 +59,20 @@
                                     <segue destination="ChS-Vv-EJd" kind="show" identifier="serviceFavorites" id="VpE-R0-Pwl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3p-ke-1bZ">
-                                <rect key="frame" x="162" y="528" width="90" height="90"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="PPy-kh-EaV"/>
-                                    <constraint firstAttribute="height" constant="90" id="tHO-iK-SEe"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="map4"/>
-                                <connections>
-                                    <action selector="serviceUpdatesOnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tai-Ts-Bnp"/>
-                                    <segue destination="PWi-kd-h5V" kind="show" identifier="serviceSegue" id="Nsg-9W-NLl"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFO-ph-ik7">
-                                <rect key="frame" x="20" y="421" width="374" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFO-ph-ik7">
+                                <rect key="frame" x="20" y="558" width="374" height="17"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6a-lt-PMe">
-                                <rect key="frame" x="20" y="626" width="374" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" layoutMarginsFollowReadableWidth="YES" text="New Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-S1-eMV">
+                                <rect key="frame" x="20" y="397" width="374" height="17"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-Me-ZuP">
-                                <rect key="frame" x="162" y="118" width="90" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-Me-ZuP">
+                                <rect key="frame" x="162" y="287" width="90" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="MMc-dj-dfO"/>
                                     <constraint firstAttribute="height" constant="90" id="VxX-FR-VWG"/>
@@ -95,28 +83,17 @@
                                     <segue destination="J26-wr-MVv" kind="show" identifier="newService" id="JCn-vv-OI3"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="New Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-S1-eMV">
-                                <rect key="frame" x="20" y="216" width="374" height="17"/>
-                                <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="14"/>
-                                <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c3p-ke-1bZ" firstAttribute="top" secondItem="lFO-ph-ik7" secondAttribute="bottom" constant="90" id="1YN-dg-eWK"/>
                             <constraint firstItem="kLR-S1-eMV" firstAttribute="top" secondItem="B8c-Me-ZuP" secondAttribute="bottom" constant="8" id="1nt-u6-awJ"/>
                             <constraint firstItem="Kdj-KP-A1v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B7u-3v-zMj"/>
                             <constraint firstItem="lFO-ph-ik7" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DLP-A8-TCz"/>
-                            <constraint firstItem="R6a-lt-PMe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="E2W-8Y-oxX"/>
                             <constraint firstItem="kLR-S1-eMV" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="FgQ-OJ-B7q"/>
                             <constraint firstItem="B8c-Me-ZuP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I8e-ii-sQG"/>
                             <constraint firstItem="kLR-S1-eMV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Q7y-RF-dpi"/>
                             <constraint firstItem="Kdj-KP-A1v" firstAttribute="top" secondItem="kLR-S1-eMV" secondAttribute="bottom" constant="90" id="XoG-Ze-Mzx"/>
                             <constraint firstItem="lFO-ph-ik7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Xvc-Jm-B8S"/>
-                            <constraint firstItem="R6a-lt-PMe" firstAttribute="top" secondItem="c3p-ke-1bZ" secondAttribute="bottom" constant="8" id="gqe-bf-9bm"/>
-                            <constraint firstItem="R6a-lt-PMe" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gy2-x4-HND"/>
-                            <constraint firstItem="c3p-ke-1bZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h68-52-HK5"/>
                             <constraint firstItem="lFO-ph-ik7" firstAttribute="top" secondItem="Kdj-KP-A1v" secondAttribute="bottom" constant="8" id="uDU-xZ-JKM"/>
                             <constraint firstItem="Kdj-KP-A1v" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wxS-VV-tx3"/>
                         </constraints>
@@ -411,7 +388,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKZ-OJ-G6X">
                                 <rect key="frame" x="20" y="396" width="374" height="335"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDE-ri-KzW">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VDE-ri-KzW">
                                         <rect key="frame" x="0.0" y="0.0" width="358" height="393"/>
                                     </stackView>
                                 </subviews>
@@ -513,8 +490,8 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFT-9y-4Nq" userLabel="DestinationView">
                                         <rect key="frame" x="0.0" y="53" width="414" height="52"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8i-Qf-GAZ">
-                                                <rect key="frame" x="159.33333333333337" y="10.333333333333336" width="95.666666666666657" height="31.999999999999993"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8i-Qf-GAZ">
+                                                <rect key="frame" x="159.33333333333337" y="10" width="95.666666666666657" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -531,7 +508,7 @@
                                         <rect key="frame" x="0.0" y="104.99999999999999" width="414" height="52.666666666666643"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-PU-l8b">
-                                                <rect key="frame" x="193" y="16.333333333333329" width="28" height="20.333333333333329"/>
+                                                <rect key="frame" x="193.66666666666666" y="17" width="28" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -547,10 +524,10 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLj-4M-5fG" userLabel="ServiceView">
                                         <rect key="frame" x="0.0" y="157.66666666666666" width="414" height="52.666666666666686"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqq-9T-zmH">
-                                                <rect key="frame" x="174.66666666666666" y="10.333333333333343" width="64.666666666666686" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqq-9T-zmH">
+                                                <rect key="frame" x="175.33333333333337" y="11" width="64.666666666666657" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
-                                                <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" red="0.99929803610000001" green="0.67094922069999996" blue="0.28936362269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -565,7 +542,7 @@
                                         <rect key="frame" x="0.0" y="210.33333333333337" width="414" height="52.666666666666629"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-RM-Du1">
-                                                <rect key="frame" x="193" y="17" width="28" height="20.333333333333314"/>
+                                                <rect key="frame" x="193.66666666666666" y="16.666666666666657" width="28" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -581,8 +558,8 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXZ-sI-qMy" userLabel="ActivationDistView">
                                         <rect key="frame" x="0.0" y="263" width="414" height="52.666666666666686"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Distance" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL9-Cu-R9S">
-                                                <rect key="frame" x="125.66666666666669" y="10.333333333333314" width="163" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Distance" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL9-Cu-R9S">
+                                                <rect key="frame" x="126.33333333333331" y="11" width="163" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -599,7 +576,7 @@
                                         <rect key="frame" x="0.0" y="315.66666666666674" width="414" height="51.333333333333314"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhF-mH-9mv">
-                                                <rect key="frame" x="193" y="15.666666666666629" width="28" height="20.333333333333371"/>
+                                                <rect key="frame" x="193.66666666666666" y="16.333333333333314" width="28" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -615,8 +592,8 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfN-MV-4UB" userLabel="ContactView">
                                         <rect key="frame" x="0.0" y="367" width="414" height="52.666666666666686"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-1T-Q7d">
-                                                <rect key="frame" x="147.66666666666669" y="11.333333333333314" width="119.00000000000006" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-1T-Q7d">
+                                                <rect key="frame" x="148.33333333333331" y="10.666666666666686" width="118.99999999999994" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -633,7 +610,7 @@
                                         <rect key="frame" x="0.0" y="419.66666666666669" width="414" height="52.666666666666629"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-Pa-jmJ">
-                                                <rect key="frame" x="193" y="16.333333333333314" width="28" height="20.333333333333314"/>
+                                                <rect key="frame" x="193.66666666666666" y="17" width="28" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -649,8 +626,8 @@
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XID-9I-1eF" userLabel="PhoneView">
                                         <rect key="frame" x="0.0" y="472.33333333333326" width="414" height="52.666666666666742"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-aP-igf">
-                                                <rect key="frame" x="145" y="10.333333333333371" width="124.33333333333331" height="31.999999999999943"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-aP-igf">
+                                                <rect key="frame" x="145" y="11" width="124.33333333333331" height="32.000000000000057"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -667,7 +644,7 @@
                                         <rect key="frame" x="0.0" y="525" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAD-cC-R5O">
-                                                <rect key="frame" x="193" y="16.333333333333371" width="28" height="20.333333333333258"/>
+                                                <rect key="frame" x="193.66666666666666" y="16" width="28" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -697,7 +674,7 @@
                                                     <constraint firstAttribute="height" constant="90" id="g1x-zQ-GlR"/>
                                                     <constraint firstAttribute="width" constant="90" id="qc2-AC-tec"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="nextbutton"/>
+                                                <state key="normal" image="nextbutton"/>
                                                 <connections>
                                                     <action selector="confirmServiceButtonClick:" destination="Gqw-4E-OLp" eventType="touchUpInside" id="pyJ-7d-sIn"/>
                                                 </connections>
@@ -781,6 +758,7 @@
                     <connections>
                         <outlet property="addToFavorites" destination="m2m-BE-Ag4" id="J0r-ko-U7o"/>
                         <outlet property="address" destination="GyJ-PU-l8b" id="TU3-32-yiq"/>
+                        <outlet property="confirmButton" destination="qOH-Cw-Lj5" id="tMl-9x-f4e"/>
                         <outlet property="contact" destination="6uD-Pa-jmJ" id="rsc-S5-RrG"/>
                         <outlet property="contactName" destination="Dnt-1T-Q7d" id="3kl-Ds-Rta"/>
                         <outlet property="phone" destination="nAD-cC-R5O" id="glK-P7-j4S"/>
@@ -827,8 +805,8 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ogx-zq-ICN">
                                 <rect key="frame" x="0.0" y="64" width="414" height="443"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Service:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWx-2a-YXy">
-                                <rect key="frame" x="20" y="536" width="89" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWx-2a-YXy">
+                                <rect key="frame" x="20" y="536" width="63.333333333333329" height="20"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -849,11 +827,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtH-4s-Zvv">
-                                <rect key="frame" x="162" y="639.33333333333348" width="78" height="76.666666666666629"/>
+                                <rect key="frame" x="168" y="639.33333333333348" width="78" height="76.666666666666629"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="bdA-JB-4jg"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="cancel"/>
+                                <connections>
+                                    <action selector="cancelButton:" destination="PWi-kd-h5V" eventType="touchUpInside" id="3qz-cC-hC5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1a-T8-Zsj">
                                 <rect key="frame" x="175" y="592.66666666666663" width="225" height="19.666666666666742"/>
@@ -895,15 +876,16 @@
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="top" secondItem="7PI-GZ-k9N" secondAttribute="bottom" constant="9" id="b2W-Wt-vYr"/>
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="leading" secondItem="Xm2-7u-RuQ" secondAttribute="trailing" constant="29" id="cS9-RQ-Vy6"/>
                             <constraint firstAttribute="bottom" secondItem="RtH-4s-Zvv" secondAttribute="bottom" constant="20" symbolic="YES" id="cYP-Vc-DpQ"/>
-                            <constraint firstItem="RtH-4s-Zvv" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leading" constant="162" id="jYZ-di-6VE"/>
                             <constraint firstItem="7PI-GZ-k9N" firstAttribute="leading" secondItem="V2d-ro-P5t" secondAttribute="leading" id="l5l-rg-ZDw"/>
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="leading" secondItem="q1a-T8-Zsj" secondAttribute="leading" id="na7-vL-dzw"/>
                             <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="baseline" secondItem="q1a-T8-Zsj" secondAttribute="firstBaseline" id="raO-it-Iwy"/>
                             <constraint firstItem="7PI-GZ-k9N" firstAttribute="top" secondItem="ogx-zq-ICN" secondAttribute="bottom" constant="28" id="uY8-Pp-L8w"/>
+                            <constraint firstItem="RtH-4s-Zvv" firstAttribute="centerX" secondItem="HZU-JU-Zhc" secondAttribute="centerX" id="wkJ-hn-3rY"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="distToDest" destination="V2d-ro-P5t" id="Dyl-Wy-cwb"/>
+                        <outlet property="cancel" destination="RtH-4s-Zvv" id="Xtz-c9-I67"/>
+                        <outlet property="distToDest" destination="V2d-ro-P5t" id="IdR-Th-k36"/>
                         <outlet property="mapView" destination="ogx-zq-ICN" id="0qk-B1-5gj"/>
                         <outlet property="serviceTitle" destination="7PI-GZ-k9N" id="3Sf-Ij-tGI"/>
                         <outlet property="timeToDest" destination="q1a-T8-Zsj" id="6l1-eV-6S4"/>
@@ -913,60 +895,6 @@
             </objects>
             <point key="canvasLocation" x="2666.666666666667" y="516.84782608695662"/>
         </scene>
-        <!--TestSMS View Controller-->
-        <scene sceneID="rlS-3I-3IV">
-            <objects>
-                <viewController id="dfi-pp-eXh" customClass="TestSMSViewController" customModule="CUSoon" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Jr2-0N-G8U"/>
-                        <viewControllerLayoutGuide type="bottom" id="L2X-RT-oEi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="SV9-op-Sdg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nm2-dh-ilC">
-                                <rect key="frame" x="189" y="463" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Send"/>
-                                <connections>
-                                    <action selector="testSMS" destination="dfi-pp-eXh" eventType="touchUpInside" id="pzJ-KQ-GEC"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Number" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-7S-f96">
-                                <rect key="frame" x="159" y="132" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Message" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WdE-OL-llg">
-                                <rect key="frame" x="159" y="248" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqc-E6-frq">
-                                <rect key="frame" x="134" y="582" width="147" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Schedule Notification"/>
-                                <connections>
-                                    <action selector="notification" destination="dfi-pp-eXh" eventType="touchUpInside" id="Nkk-lV-3AV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="msg" destination="WdE-OL-llg" id="d3K-cS-bjD"/>
-                        <outlet property="toNumber" destination="qI0-7S-f96" id="tvK-er-EqW"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="knw-Hk-5ZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1512" y="815"/>
-        </scene>
     </scenes>
     <resources>
         <image name="alarm_text_icon" width="384" height="368"/>
@@ -974,12 +902,10 @@
         <image name="cancel" width="256" height="256"/>
         <image name="contact_stock_image" width="512" height="512"/>
         <image name="favorites" width="384" height="368"/>
-        <image name="map4" width="256" height="256"/>
         <image name="nextbutton" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JCn-vv-OI3"/>
         <segue reference="9FH-Oe-qxn"/>
-        <segue reference="JQW-JC-vZU"/>
     </inferredMetricsTieBreakers>
 </document>
