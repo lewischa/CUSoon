@@ -160,9 +160,9 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                     let timeLabel = "\(timeInMin) minutes"
                     self.timeToDest.text = timeLabel
                 }
-                self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
+//                self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             }
-            
+            self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             
             let testRectSize: MKMapSize = MKMapSize(width: self.route.polyline.boundingMapRect.size.width * 1.06, height: self.route.polyline.boundingMapRect.size.height * 1.06)
             let testRect = MKMapRect(origin: self.route.polyline.boundingMapRect.origin, size: testRectSize)
