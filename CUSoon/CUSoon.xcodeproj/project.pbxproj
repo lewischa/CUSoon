@@ -348,7 +348,7 @@
 				TargetAttributes = {
 					0CB6EED91E9EECD400FFCDBE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JHF6RYCS32;
+						DevelopmentTeam = SW3782WXMN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -595,10 +595,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JHF6RYCS32;
+				DEVELOPMENT_TEAM = SW3782WXMN;
 				INFOPLIST_FILE = CUSoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon.brooke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -608,10 +608,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JHF6RYCS32;
+				DEVELOPMENT_TEAM = SW3782WXMN;
 				INFOPLIST_FILE = CUSoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.CUSoon.brooke;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

@@ -51,8 +51,11 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.requestWhenInUseAuthorization()
         lManager.startUpdatingLocation()
 
-        serviceTitle.text = currentService.address
-
+        //serviceTitle.text = currentService.address
+        currentService.reverseGeocode(completion: {
+            (addressToUse) -> Void in
+            self.serviceTitle.text = addressToUse
+        })
         let span = MKCoordinateSpanMake(0.32, 0.32)
         let region = MKCoordinateRegionMake((lManager.location?.coordinate)!, span)
         mapView.showsUserLocation = true
@@ -192,6 +195,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func setServiceForSegue(service: ServiceModel) {
         currentService = service
+        //serviceTitle.text = service.address
         serviceHandler = ServiceHandler(currentService)
     }
 

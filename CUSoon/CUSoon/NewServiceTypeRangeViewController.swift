@@ -189,7 +189,8 @@ class NewServiceTypeRangeViewController: UIViewController, CLLocationManagerDele
         searchController.hidesNavigationBarDuringPresentation = false
         definesPresentationContext = true
         self.searchController.searchBar.delegate = self
-        
+        searchController.searchBar.barStyle = .black
+        searchController.searchBar.tintColor = colors.blueText
         
         present(searchController, animated: true, completion: nil)
     }
