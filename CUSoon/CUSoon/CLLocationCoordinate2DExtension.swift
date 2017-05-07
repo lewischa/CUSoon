@@ -2,7 +2,10 @@
 //  CLLocationCoordinate2DExtension.swift
 //  CUSoon
 //
-//  Created by Chad Lewis on 5/6/17.
+//  Created by:
+//      Brooke Borges
+//      Chad Lewis
+//      Jeremy Olsen
 //  Copyright © 2017 Capstone. All rights reserved.
 //
 

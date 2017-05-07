@@ -2,7 +2,10 @@
 //  StatusViewController.swift
 //  CUSoon
 //
-//  Created by student on 4/17/17.
+//  Created by:
+//      Brooke Borges
+//      Chad Lewis
+//      Jeremy Olsen
 //  Copyright © 2017 Capstone. All rights reserved.
 //
 
