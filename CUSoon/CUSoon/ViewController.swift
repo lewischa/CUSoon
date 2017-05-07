@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     let accessor = DatabaseAccessor()
     let locator = CLLocationManager()
     let colors = Colors()
+    
+    
     @IBOutlet weak var newServiceButton: UIButton!
     @IBOutlet weak var newServiceLabel: UILabel!
     @IBOutlet weak var favoritesButton: UIButton!
@@ -50,6 +52,12 @@ class ViewController: UIViewController {
 //            activateNewAndFavoritesButtons()
 //        }
     }
+    
+    @IBAction func info(_ sender: Any) {
+        self.performSegue(withIdentifier: "info", sender: nil)
+    }
+    
+    
     
     func activateNewAndFavoritesButtons() {
         newServiceButton.isEnabled = true
@@ -158,6 +166,10 @@ class ViewController: UIViewController {
             let statusVC = segue.destination as! StatusViewController
             statusVC.setServiceForSegue(service: currentService)    
         }
+        else if segue.identifier == "info"{
+            let infoVC = segue.destination as! InfoViewController
+        }
+        
         
     }
     

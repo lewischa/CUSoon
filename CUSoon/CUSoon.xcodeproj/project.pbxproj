@@ -39,6 +39,7 @@
 		423DAE791EA433F500EF1A33 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423DAE781EA433F500EF1A33 /* MapKit.framework */; };
 		423DAE7B1EA433FF00EF1A33 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423DAE7A1EA433FF00EF1A33 /* CoreLocation.framework */; };
 		423DAE7D1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423DAE7C1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift */; };
+		428461E31EBF996F00581EC4 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428461E21EBF996F00581EC4 /* InfoViewController.swift */; };
 		42CAE5621EAAE623007051E7 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CAE5611EAAE623007051E7 /* Contacts.framework */; };
 		42CAE5641EAAE62D007051E7 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42CAE5631EAAE62D007051E7 /* ContactsUI.framework */; };
 		42CAE5661EABC52E007051E7 /* ConfirmServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CAE5651EABC52E007051E7 /* ConfirmServiceViewController.swift */; };
@@ -101,6 +102,7 @@
 		423DAE781EA433F500EF1A33 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		423DAE7A1EA433FF00EF1A33 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		423DAE7C1EA44E1C00EF1A33 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		428461E21EBF996F00581EC4 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		42CAE5611EAAE623007051E7 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		42CAE5631EAAE62D007051E7 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		42CAE5651EABC52E007051E7 /* ConfirmServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmServiceViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				42CAE5651EABC52E007051E7 /* ConfirmServiceViewController.swift */,
 				423DAE6C1EA3097B00EF1A33 /* NewServiceTypeRangeViewController.swift */,
 				3FD30A331EA5925B00B452D9 /* StatusViewController.swift */,
+				428461E21EBF996F00581EC4 /* InfoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				0CB6EEDE1E9EECD500FFCDBE /* AppDelegate.swift in Sources */,
 				0C0AC72C1E9F2AD400BEBD42 /* ServiceModel.swift in Sources */,
 				0C87ADDC1EAC3AA70032F255 /* SMSHandler.swift in Sources */,
+				428461E31EBF996F00581EC4 /* InfoViewController.swift in Sources */,
 				0C87ADDA1EAC34EC0032F255 /* SMSModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
