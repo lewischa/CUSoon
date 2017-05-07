@@ -214,8 +214,9 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = colors.blueText
-        renderer.lineWidth = 4.0
+        renderer.strokeColor = colors.titleOrage
+        renderer.lineWidth = 2.25
+        renderer.alpha = 0.75
         
         return renderer
     }
