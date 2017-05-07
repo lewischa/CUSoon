@@ -2,7 +2,10 @@
 //  ConfirmServiceViewController.swift
 //  CUSoon
 //
-//  Created by Jeremy Olsen on 4/22/17.
+//  Created by:
+//      Brooke Borges
+//      Chad Lewis
+//      Jeremy Olsen
 //  Copyright © 2017 Capstone. All rights reserved.
 //
 

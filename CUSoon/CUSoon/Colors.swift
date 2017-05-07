@@ -2,7 +2,10 @@
 //  Colors.swift
 //  CUSoon
 //
-//  Created by Chad Lewis on 4/18/17.
+//  Created by:
+//      Brooke Borges
+//      Chad Lewis
+//      Jeremy Olsen
 //  Copyright © 2017 Capstone. All rights reserved.
 //
 
