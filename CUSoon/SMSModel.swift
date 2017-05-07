@@ -14,7 +14,7 @@ struct SMSModel {
     let cusoonResponse: String
 //    "Sent from CUSoon."
     
-    init(to: String, body: String) {
+    init(to: String, body: String, time: Double) {
         cusoonResponse = "Sent from CUSoon app."
         if to.characters.count == 10 {
             number = "%2B1"
@@ -26,6 +26,7 @@ struct SMSModel {
         if message != "" {
             message += " - "
         }
+        message += "\(time) minutes until arrival - "
         message += cusoonResponse
     }
     
