@@ -11,12 +11,13 @@ import MapKit
 import CoreLocation
 import UserNotifications
 
-class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeToDest: UILabel!
     @IBOutlet weak var distToDest: UILabel!
     @IBOutlet weak var serviceTitle: UILabel!
+    @IBOutlet weak var centerOnLocationButton: UIButton!
     
     @IBOutlet weak var cancel: UIButton!
     @IBAction func cancelButton(_ sender: Any) {
@@ -34,11 +35,16 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     var currentService = ServiceModel()
     var serviceHandler = ServiceHandler()
     var annotationSet = false
+    var centeredOnUserLocation = false
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        UNUserNotificationCenter.current().delegate = (self as! UNUserNotificationCenterDelegate)
+        
+        let mapDragRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.didDragMap(gestureRecognizer:)))
+        mapDragRecognizer.delegate = self
+        mapView.addGestureRecognizer(mapDragRecognizer)
+        UNUserNotificationCenter.current().delegate = (self as UNUserNotificationCenterDelegate)
         mapView.delegate = self
         cancel.isEnabled = true
         self.cancel.alpha = 1.0
@@ -52,6 +58,8 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.requestAlwaysAuthorization()
         lManager.allowsBackgroundLocationUpdates = true
         lManager.startUpdatingLocation()
+        lManager.headingFilter = 5
+        lManager.startUpdatingHeading()
         
 
         //serviceTitle.text = currentService.address
@@ -68,6 +76,18 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         configureColors()
     }
     
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func didDragMap(gestureRecognizer: UIGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            centeredOnUserLocation = false
+            centerOnLocationButton.alpha = 1.0
+            centerOnLocationButton.isEnabled = true
+        }
+    }
+    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0]
@@ -75,10 +95,15 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         self.drawRoute(currentLocation: userLocation)
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        mapView.camera.heading = newHeading.magneticHeading
+        mapView.setCamera(mapView.camera, animated: true)
+    }
     
-    func checkForCompletion(distanceInMiles: Double) {
+    
+    func checkForCompletion(distanceInMiles: Double, time: Double) {
         if (distanceInMiles <= currentService.range) {
-            serviceHandler.fire()
+            serviceHandler.fire(time)
             DispatchQueue.main.async {
                 self.cancel.isEnabled = false
                 UIView.animate(withDuration: 0.5, animations:  {
@@ -150,12 +175,12 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             self.distToDest.text = distLabel
             
             let timeInSeconds = self.route.expectedTravelTime
+            let timeInMin = round((timeInSeconds/60.0))
             if timeInSeconds < 59.0 {
                 let timeString = String(timeInSeconds)
                 let timeLabel = "\(timeString) second(s)"
                 self.timeToDest.text = timeLabel
             } else {
-                let timeInMin = round((timeInSeconds/60.0))
                 if timeInMin >= 60.0 {
                     let minutes = Int(timeInMin.truncatingRemainder(dividingBy: 60))
                     let hours = Int(timeInMin/60)
@@ -167,13 +192,23 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 }
 //                self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
             }
-            self.checkForCompletion(distanceInMiles: distanceInMilesDouble)
+            self.checkForCompletion(distanceInMiles: distanceInMilesDouble, time: timeInMin)
             
             
-            let testRectSize: MKMapSize = MKMapSize(width: self.route.polyline.boundingMapRect.size.width * 1.5, height: self.route.polyline.boundingMapRect.size.height * 1.5)
-            let testRect = MKMapRect(origin: self.route.polyline.boundingMapRect.origin, size: testRectSize)
-            
-            self.mapView.setRegion(MKCoordinateRegionForMapRect(testRect), animated: true)
+            if !self.centeredOnUserLocation {
+                let latDelta = abs(currentLocation.coordinate.latitude - self.currentService.destination.latitude) + 0.05
+                let lonDelta = abs(currentLocation.coordinate.longitude - self.currentService.destination.longitude) + 0.05
+                
+                let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+                
+                let region = MKCoordinateRegion(center: currentLocation.midPoint(destination: self.currentService.destination), span: span)
+                self.mapView.setRegion(region, animated: true)
+            } else {
+//                let span = MKCoordinateSpan(latitudeDelta: 0.08, longitudeDelta: 0.08)
+//                let region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
+//                self.mapView.setRegion(region, animated: true)
+                self.mapView.setUserTrackingMode(.followWithHeading, animated: true)
+            }
             
         }
     }
@@ -184,6 +219,12 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         renderer.lineWidth = 4.0
         
         return renderer
+    }
+    @IBAction func centerOnUserLocationTarget(_ sender: Any) {
+        centeredOnUserLocation = true
+        let button = sender as! UIButton
+        button.isEnabled = false
+        button.alpha = 0.25
     }
     
     override func didReceiveMemoryWarning() {

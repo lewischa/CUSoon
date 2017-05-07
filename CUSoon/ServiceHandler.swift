@@ -59,7 +59,7 @@ class ServiceHandler: NSObject {
         })
     }
     
-    func fire() {
+    func fire(_ timeToArrival: Double) {
         let sType = service.service_type
         if sType == 0 || sType == 2 {
             scheduleNotification()
@@ -67,7 +67,7 @@ class ServiceHandler: NSObject {
         if sType == 1 || sType == 2 {
             // send SMS
             if let number = service.phone, let message = service.message {
-                smsHandler.sendSMS(sms: SMSModel(to: number, body: message))
+                smsHandler.sendSMS(sms: SMSModel(to: number, body: message, time: timeToArrival))
             }
         }
     }

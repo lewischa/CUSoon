@@ -54,7 +54,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="368"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8c-Me-ZuP">
-                                                <rect key="frame" x="147" y="163.33333333333331" width="120" height="119.99999999999994"/>
+                                                <rect key="frame" x="147" y="163" width="120" height="120"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="120" id="YBc-cC-d4L"/>
                                                     <constraint firstAttribute="height" constant="120" id="dOm-oj-9tb"/>
@@ -66,7 +66,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="New Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLR-S1-eMV">
-                                                <rect key="frame" x="0.0" y="291.33333333333326" width="414" height="16.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="291" width="414" height="17"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFO-ph-ik7">
-                                                <rect key="frame" x="0.0" y="188" width="414" height="16.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="188" width="414" height="17"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.67164424810000001" blue="0.29178729219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yh7-a0-ney" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="-465"/>
+            <point key="canvasLocation" x="1079.7101449275362" y="-465.48913043478262"/>
         </scene>
         <!--locationSearchTable-->
         <scene sceneID="FZ0-Ya-WA0">
@@ -272,18 +272,18 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uFA-SM-u79" id="9rs-Is-YhL">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xOf-3j-YnN">
-                                            <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jgO-SA-ieR">
-                                            <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -317,11 +317,11 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QFa-da-VJS" id="LwP-IL-IpS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="157"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MOB-vf-sBL">
-                                            <rect key="frame" x="8" y="30.666666666666664" width="90" height="90.333333333333343"/>
+                                            <rect key="frame" x="8" y="30" width="90" height="90"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="90" id="98O-uC-21k"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="DEi-65-jZE"/>
@@ -330,19 +330,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jz-8z-gJB">
-                                            <rect key="frame" x="115" y="94" width="291" height="20"/>
+                                            <rect key="frame" x="115" y="94" width="291" height="19"/>
                                             <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k04-Ww-5gj">
-                                            <rect key="frame" x="115" y="28.999999999999996" width="291" height="28.666666666666661"/>
+                                            <rect key="frame" x="115" y="29" width="291" height="29"/>
                                             <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="24"/>
                                             <color key="textColor" red="1" green="0.67094922065734863" blue="0.28936362266540527" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-1Z-9WW">
-                                            <rect key="frame" x="115" y="65" width="291" height="20.666666666666671"/>
+                                            <rect key="frame" x="115" y="66" width="291" height="20"/>
                                             <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -527,7 +527,7 @@
                                         <rect key="frame" x="0.0" y="53" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8i-Qf-GAZ">
-                                                <rect key="frame" x="159.33333333333337" y="10.666666666666664" width="95.666666666666657" height="32.000000000000007"/>
+                                                <rect key="frame" x="159" y="10" width="96" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -541,10 +541,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ieo-tL-jwl" userLabel="DestinationLabelView">
-                                        <rect key="frame" x="0.0" y="104.99999999999999" width="414" height="52.666666666666643"/>
+                                        <rect key="frame" x="0.0" y="105" width="414" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-PU-l8b">
-                                                <rect key="frame" x="193.33333333333334" y="16.666666666666671" width="28" height="20.333333333333329"/>
+                                                <rect key="frame" x="193" y="16" width="28" height="21"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -558,10 +558,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLj-4M-5fG" userLabel="ServiceView">
-                                        <rect key="frame" x="0.0" y="157.66666666666666" width="414" height="52.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="158" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqq-9T-zmH">
-                                                <rect key="frame" x="175" y="10.666666666666686" width="64.666666666666657" height="32"/>
+                                                <rect key="frame" x="175" y="10" width="65" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="0.99929803610000001" green="0.67094922069999996" blue="0.28936362269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -575,10 +575,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcX-p0-ma2" userLabel="ServiceLabelView">
-                                        <rect key="frame" x="0.0" y="210.33333333333337" width="414" height="52.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="210" width="414" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzH-RM-Du1">
-                                                <rect key="frame" x="193.33333333333334" y="16.333333333333314" width="28" height="20.333333333333343"/>
+                                                <rect key="frame" x="193" y="16" width="28" height="21"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -592,10 +592,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXZ-sI-qMy" userLabel="ActivationDistView">
-                                        <rect key="frame" x="0.0" y="263" width="414" height="52.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="263" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation Distance" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TL9-Cu-R9S">
-                                                <rect key="frame" x="126" y="10.333333333333314" width="163" height="32"/>
+                                                <rect key="frame" x="126" y="10" width="163" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -609,10 +609,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-EL-V9q" userLabel="ActivationDistLabelView">
-                                        <rect key="frame" x="0.0" y="315.66666666666674" width="414" height="51.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="315" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhF-mH-9mv">
-                                                <rect key="frame" x="193.33333333333334" y="16" width="28" height="20.333333333333314"/>
+                                                <rect key="frame" x="193" y="16" width="28" height="21"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -626,10 +626,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfN-MV-4UB" userLabel="ContactView">
-                                        <rect key="frame" x="0.0" y="367" width="414" height="52.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="367" width="414" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dnt-1T-Q7d">
-                                                <rect key="frame" x="148" y="11.333333333333314" width="119" height="32"/>
+                                                <rect key="frame" x="148" y="11" width="119" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -643,10 +643,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AKW-ik-tYR" userLabel="ContactLabel">
-                                        <rect key="frame" x="0.0" y="419.66666666666669" width="414" height="52.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="420" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uD-Pa-jmJ">
-                                                <rect key="frame" x="193.33333333333334" y="16.666666666666629" width="28" height="20.333333333333371"/>
+                                                <rect key="frame" x="193" y="16" width="28" height="21"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -660,10 +660,10 @@
                                         </constraints>
                                     </view>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XID-9I-1eF" userLabel="PhoneView">
-                                        <rect key="frame" x="0.0" y="472.33333333333326" width="414" height="52.666666666666742"/>
+                                        <rect key="frame" x="0.0" y="472" width="414" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-aP-igf">
-                                                <rect key="frame" x="145" y="10.333333333333371" width="124.33333333333331" height="31.999999999999943"/>
+                                                <rect key="frame" x="145" y="11" width="125" height="32"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="27"/>
                                                 <color key="textColor" red="1" green="0.67249028399999999" blue="0.28779194619999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -680,7 +680,7 @@
                                         <rect key="frame" x="0.0" y="525" width="414" height="52"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAD-cC-R5O">
-                                                <rect key="frame" x="193.33333333333334" y="16.666666666666629" width="28" height="20.333333333333371"/>
+                                                <rect key="frame" x="193" y="15" width="28" height="21"/>
                                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -844,7 +844,7 @@
                                 <rect key="frame" x="0.0" y="64" width="414" height="443"/>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWx-2a-YXy">
-                                <rect key="frame" x="20" y="536" width="63.333333333333329" height="20"/>
+                                <rect key="frame" x="20" y="535" width="64" height="21"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -859,13 +859,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7PI-GZ-k9N">
-                                <rect key="frame" x="175" y="535" width="239" height="20"/>
+                                <rect key="frame" x="175" y="534" width="239" height="21"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtH-4s-Zvv">
-                                <rect key="frame" x="168" y="639.33333333333348" width="78" height="76.666666666666629"/>
+                                <rect key="frame" x="168" y="640" width="78" height="76"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="bdA-JB-4jg"/>
                                 </constraints>
@@ -875,7 +875,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1a-T8-Zsj">
-                                <rect key="frame" x="175" y="592.66666666666663" width="225" height="19.666666666666742"/>
+                                <rect key="frame" x="175" y="592" width="225" height="21"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -886,19 +886,31 @@
                                 <color key="textColor" red="0.0" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time to Destination: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXQ-Ng-Ww4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to Destination: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXQ-Ng-Ww4">
                                 <rect key="frame" x="20" y="591" width="112" height="21"/>
                                 <fontDescription key="fontDescription" name="AgencyFB-Reg" family="Agency FB" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7df-ZX-gaP">
+                                <rect key="frame" x="311" y="394" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7df-ZX-gaP" secondAttribute="height" multiplier="1:1" id="cAf-9R-sbn"/>
+                                </constraints>
+                                <state key="normal" image="gps27"/>
+                                <connections>
+                                    <action selector="centerOnUserLocationTarget:" destination="PWi-kd-h5V" eventType="touchUpInside" id="JRt-9r-aRP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Oc0-IU-gEI" firstAttribute="top" secondItem="xXQ-Ng-Ww4" secondAttribute="bottom" constant="123" id="0mI-NB-mIu"/>
+                            <constraint firstItem="Oc0-IU-gEI" firstAttribute="top" secondItem="xXQ-Ng-Ww4" secondAttribute="bottom" constant="124" id="0mI-NB-mIu"/>
+                            <constraint firstItem="7df-ZX-gaP" firstAttribute="top" secondItem="hgg-jw-NGM" secondAttribute="bottom" constant="330" id="1lm-gQ-TIe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7df-ZX-gaP" secondAttribute="trailing" constant="8" id="255-BJ-lkL"/>
                             <constraint firstItem="Xm2-7u-RuQ" firstAttribute="firstBaseline" secondItem="V2d-ro-P5t" secondAttribute="firstBaseline" id="2HM-wV-GQV"/>
                             <constraint firstItem="Xm2-7u-RuQ" firstAttribute="baseline" secondItem="V2d-ro-P5t" secondAttribute="baseline" id="33w-QF-Kxn"/>
-                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leadingMargin" constant="-3" id="5wT-r9-lxk"/>
-                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="centerY" secondItem="q1a-T8-Zsj" secondAttribute="centerY" id="7Xr-7A-eIU"/>
+                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leadingMargin" id="5wT-r9-lxk"/>
+                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="centerY" secondItem="q1a-T8-Zsj" secondAttribute="centerY" constant="-1" id="7Xr-7A-eIU"/>
                             <constraint firstItem="7PI-GZ-k9N" firstAttribute="trailing" secondItem="V2d-ro-P5t" secondAttribute="trailing" id="8of-hc-g9g"/>
                             <constraint firstItem="RtH-4s-Zvv" firstAttribute="top" secondItem="q1a-T8-Zsj" secondAttribute="bottom" constant="27" id="947-Bz-sEY"/>
                             <constraint firstItem="JWx-2a-YXy" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leadingMargin" id="A2a-lL-bF9"/>
@@ -906,23 +918,25 @@
                             <constraint firstItem="JWx-2a-YXy" firstAttribute="leading" secondItem="Xm2-7u-RuQ" secondAttribute="leading" id="H3f-SA-Fgz"/>
                             <constraint firstItem="ogx-zq-ICN" firstAttribute="trailing" secondItem="7PI-GZ-k9N" secondAttribute="trailing" id="LFx-g3-QTT"/>
                             <constraint firstItem="Xm2-7u-RuQ" firstAttribute="top" secondItem="JWx-2a-YXy" secondAttribute="bottom" constant="8" symbolic="YES" id="O8h-Ff-pdZ"/>
-                            <constraint firstItem="q1a-T8-Zsj" firstAttribute="leading" secondItem="xXQ-Ng-Ww4" secondAttribute="trailing" constant="46" id="PSS-pA-BdG"/>
+                            <constraint firstItem="q1a-T8-Zsj" firstAttribute="leading" secondItem="xXQ-Ng-Ww4" secondAttribute="trailing" constant="43" id="PSS-pA-BdG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="q1a-T8-Zsj" secondAttribute="trailing" constant="-6" id="Qo5-ak-8RL"/>
                             <constraint firstItem="ogx-zq-ICN" firstAttribute="top" secondItem="hgg-jw-NGM" secondAttribute="bottom" id="Ufq-sC-GKG"/>
                             <constraint firstItem="ogx-zq-ICN" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leading" id="YRV-cu-xtJ"/>
-                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="top" secondItem="Xm2-7u-RuQ" secondAttribute="bottom" constant="8" symbolic="YES" id="afB-S7-aWq"/>
+                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="top" secondItem="Xm2-7u-RuQ" secondAttribute="bottom" constant="7" id="afB-S7-aWq"/>
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="top" secondItem="7PI-GZ-k9N" secondAttribute="bottom" constant="9" id="b2W-Wt-vYr"/>
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="leading" secondItem="Xm2-7u-RuQ" secondAttribute="trailing" constant="29" id="cS9-RQ-Vy6"/>
                             <constraint firstAttribute="bottom" secondItem="RtH-4s-Zvv" secondAttribute="bottom" constant="20" symbolic="YES" id="cYP-Vc-DpQ"/>
                             <constraint firstItem="7PI-GZ-k9N" firstAttribute="leading" secondItem="V2d-ro-P5t" secondAttribute="leading" id="l5l-rg-ZDw"/>
                             <constraint firstItem="V2d-ro-P5t" firstAttribute="leading" secondItem="q1a-T8-Zsj" secondAttribute="leading" id="na7-vL-dzw"/>
-                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="baseline" secondItem="q1a-T8-Zsj" secondAttribute="firstBaseline" id="raO-it-Iwy"/>
-                            <constraint firstItem="7PI-GZ-k9N" firstAttribute="top" secondItem="ogx-zq-ICN" secondAttribute="bottom" constant="28" id="uY8-Pp-L8w"/>
+                            <constraint firstItem="xXQ-Ng-Ww4" firstAttribute="baseline" secondItem="q1a-T8-Zsj" secondAttribute="firstBaseline" constant="-1" id="raO-it-Iwy"/>
+                            <constraint firstItem="7df-ZX-gaP" firstAttribute="leading" secondItem="HZU-JU-Zhc" secondAttribute="leadingMargin" constant="291" id="uvb-nv-vge"/>
+                            <constraint firstItem="7PI-GZ-k9N" firstAttribute="top" secondItem="ogx-zq-ICN" secondAttribute="bottom" constant="27" id="vA0-SE-QQd"/>
                             <constraint firstItem="RtH-4s-Zvv" firstAttribute="centerX" secondItem="HZU-JU-Zhc" secondAttribute="centerX" id="wkJ-hn-3rY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cancel" destination="RtH-4s-Zvv" id="Xtz-c9-I67"/>
+                        <outlet property="centerOnLocationButton" destination="7df-ZX-gaP" id="ybD-pB-zzw"/>
                         <outlet property="distToDest" destination="V2d-ro-P5t" id="IdR-Th-k36"/>
                         <outlet property="mapView" destination="ogx-zq-ICN" id="0qk-B1-5gj"/>
                         <outlet property="serviceTitle" destination="7PI-GZ-k9N" id="3Sf-Ij-tGI"/>
@@ -940,10 +954,11 @@
         <image name="cancel" width="256" height="256"/>
         <image name="contact_stock_image" width="512" height="512"/>
         <image name="favorites" width="384" height="368"/>
+        <image name="gps27" width="256" height="256"/>
         <image name="nextbutton" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JCn-vv-OI3"/>
-        <segue reference="MN7-q8-kTA"/>
+        <segue reference="QVC-Fi-uKq"/>
     </inferredMetricsTieBreakers>
 </document>
