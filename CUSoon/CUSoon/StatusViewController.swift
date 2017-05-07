@@ -27,6 +27,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         UIView.animate(withDuration: 0.5, animations:  {
             self.cancel.alpha = 0.5
         })
+        mapView.removeOverlays(self.mapView.overlays)
     }
     
     var route = MKRoute()
@@ -58,8 +59,6 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         lManager.requestAlwaysAuthorization()
         lManager.allowsBackgroundLocationUpdates = true
         lManager.startUpdatingLocation()
-        lManager.headingFilter = 5
-        lManager.startUpdatingHeading()
         
 
         //serviceTitle.text = currentService.address
@@ -95,11 +94,6 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
         self.drawRoute(currentLocation: userLocation)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        mapView.camera.heading = newHeading.magneticHeading
-        mapView.setCamera(mapView.camera, animated: true)
-    }
-    
     
     func checkForCompletion(distanceInMiles: Double, time: Double) {
         if (distanceInMiles <= currentService.range) {
@@ -109,8 +103,12 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
                 UIView.animate(withDuration: 0.5, animations:  {
                     self.cancel.alpha = 0.5
                 })
+                let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                let coordinate = MKCoordinateRegion(center: (self.lManager.location?.coordinate)!, span: span)
+                self.mapView.setRegion(coordinate, animated: true)
                 self.lManager.stopUpdatingLocation()
                 self.navigationItem.setHidesBackButton(false, animated: true)
+                self.mapView.removeOverlays(self.mapView.overlays)
             }
         }
     }
@@ -196,6 +194,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
             
             
             if !self.centeredOnUserLocation {
+                self.mapView.setUserTrackingMode(.none, animated: true)
                 let latDelta = abs(currentLocation.coordinate.latitude - self.currentService.destination.latitude) + 0.05
                 let lonDelta = abs(currentLocation.coordinate.longitude - self.currentService.destination.longitude) + 0.05
                 
@@ -222,6 +221,7 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     @IBAction func centerOnUserLocationTarget(_ sender: Any) {
         centeredOnUserLocation = true
+        self.mapView.setUserTrackingMode(.followWithHeading, animated: true)
         let button = sender as! UIButton
         button.isEnabled = false
         button.alpha = 0.25
@@ -233,11 +233,9 @@ class StatusViewController: UIViewController, MKMapViewDelegate, CLLocationManag
     }
     
     func configureColors() {
-        let textColor = UIColor(red: 255/255, green: 171/255, blue: 74/255, alpha: 1)
-        let backgroundColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: textColor]
-        navigationController?.navigationBar.barTintColor = backgroundColor
-        view.backgroundColor = backgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.titleOrage]
+        navigationController?.navigationBar.barTintColor = colors.background
+        view.backgroundColor = colors.background
         
     }
     
